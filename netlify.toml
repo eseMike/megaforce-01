@@ -4,6 +4,7 @@
 
 [build.environment]
   NODE_VERSION = "18"
+  NETLIFY_USE_ANGULAR_RUNTIME = "false"
 
 [[redirects]]
   from = "/*"
