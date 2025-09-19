@@ -1,0 +1,4 @@
+plugins:
+  - inputs: {}
+    origin: ui
+    package: ''
