@@ -1,0 +1,43 @@
+<section id="contact" class="contact" aria-labelledby="contact-title">
+  <div class="contact__container">
+    <div class="contact__left">
+      <header class="contact__header">
+        <h2 id="contact-title" class="contact__title">Déjanos conocerte</h2>
+        <p class="contact__subtitle"><em>Estamos en contacto contigo</em></p>
+      </header>
+
+      <form class="contact__form" autocomplete="on" novalidate>
+        <div class="contact__field">
+          <label for="name" class="sr-only">Nombre</label>
+          <input id="name" name="name" type="text" placeholder="Nombre" required />
+        </div>
+
+        <div class="contact__field">
+          <label for="email" class="sr-only">Correo electrónico</label>
+          <input id="email" name="email" type="email" placeholder="Correo Electrónico" inputmode="email" required />
+        </div>
+
+        <div class="contact__field contact__field--inline">
+          <label for="phone-prefix" class="sr-only">Código de país</label>
+          <input id="phone-prefix" name="phonePrefix" type="text" inputmode="tel" autocomplete="tel-country-code" class="contact__prefix" value="+52" aria-label="Código de país" />
+          <label for="phone" class="sr-only">Número de teléfono</label>
+          <input id="phone" name="phone" type="tel" placeholder="Número de teléfono" inputmode="tel" autocomplete="tel" required />
+        </div>
+
+        <div class="contact__field">
+          <label for="message" class="sr-only">Escribe tu mensaje</label>
+          <textarea id="message" name="message" placeholder="Escribe tu mensaje" rows="5"></textarea>
+        </div>
+
+        <button type="submit" class="contact__submit" aria-label="Enviar formulario">
+          Enviar <span aria-hidden="true">→</span>
+        </button>
+      </form>
+    </div>
+
+    <!-- Right column: illustration -->
+    <div class="contact__right">
+      <img class="contact__hand" src="assets/images/manoGotas.png" alt="" loading="lazy" />
+    </div>
+  </div>
+</section>

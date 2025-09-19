@@ -1,0 +1,140 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #0c0c0c;
+  color: #fff;
+}
+
+.nav__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+
+  img {
+    height: 40px;
+    display: block;
+  }
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 3.2vw, 36px);
+
+  a {
+    color: #ddd;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: .2px;
+    transition: color .2s ease;
+
+    position: relative;
+    padding-bottom: 6px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background: #fff;
+      transform: translateX(-50%);
+      transition: width .25s ease;
+      opacity: .85;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+
+    &.active::after {
+      width: 100%;
+    }
+
+    &.active,
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .nav__lang {
+    padding: 6px 10px;
+    border: 1px solid #fff2;
+    border-radius: 6px;
+  }
+}
+
+/* Toggle (hamburguesa) */
+.nav__toggle {
+  display: none;
+  width: 36px;
+  height: 28px;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+
+  span {
+    display: block;
+    height: 2px;
+    background: #fff;
+    margin: 6px 0;
+    transition: transform .2s ease;
+  }
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+  .nav__toggle {
+    display: block;
+  }
+
+  .nav__links {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: #0c0c0c;
+    flex-direction: column;
+    padding: 10px 16px;
+    border-top: 1px solid #ffffff14;
+    display: none;
+
+    &.is-open {
+      display: flex;
+    }
+
+    a {
+      padding: 8px 0;
+      width: 100%;
+      padding-bottom: 4px;
+
+      &::after {
+        left: 0;
+        transform: none;
+      }
+
+      &:hover::after,
+      &.active::after {
+        width: 40%;
+      }
+    }
+  }
+}

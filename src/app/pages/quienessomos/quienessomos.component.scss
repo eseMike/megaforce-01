@@ -1,0 +1,207 @@
+/* ===== Quienes Somos (About) ===== */
+:host {
+  display: block;
+  color: #f3f3f7;
+  /* fondo oscuro con destellos morados, sin interferir con otras secciones */
+  background:
+    radial-gradient(1200px 600px at 8% -5%, rgba(146, 78, 255, 0.18), transparent 60%),
+    radial-gradient(900px 480px at 95% 20%, rgba(255, 0, 210, 0.08), transparent 70%),
+    linear-gradient(180deg, #0c0b12 0%, #0a0a0f 100%);
+}
+
+/* contenedor centrado */
+.about,
+.quienes,
+.qs {
+  max-width: 1180px;
+  margin-inline: auto;
+  padding: clamp(48px, 6vw, 80px) clamp(16px, 4vw, 24px);
+  box-sizing: border-box;
+}
+
+/* título de sección */
+.about__title,
+.qs__title {
+  font-family: var(--display-hand, "MADE Soulmaze Brush", system-ui, sans-serif);
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 44px);
+  letter-spacing: .4px;
+  margin: 0 0 clamp(20px, 3vw, 32px) 0;
+  text-shadow: 0 2px 12px rgba(0,0,0,.45);
+}
+
+/* lista de tarjetas */
+.about__list,
+.qs__list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2.6vw, 28px);
+}
+
+/* tarjeta */
+.about-card,
+.qs__item {
+  background: linear-gradient(180deg, #231a33 0%, #171320 100%);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 22px;
+  box-shadow:
+    0 10px 28px rgba(128, 72, 255, 0.15),
+    inset 0 1px 0 rgba(255,255,255,.06);
+  padding: clamp(16px, 2.2vw, 22px);
+  display: flex;
+  align-items: stretch;
+  gap: clamp(14px, 3vw, 24px);
+  padding-top: clamp(18px, 2.6vw, 26px);
+  padding-bottom: clamp(18px, 2.6vw, 26px);
+  flex-wrap: nowrap;
+  position: relative;
+  overflow: hidden;
+  min-height: 160px;
+}
+
+.about-card > .qs__logo,
+.qs__item > .qs__logo { align-self: center; }
+.about-card > .qs__content,
+.qs__item > .qs__content { align-self: center; }
+
+.qs__item:hover, .about-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(128, 72, 255, 0.2), inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+/* borde resplandor sutil decorativo */
+.about-card::after,
+.qs__item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.05), 0 0 80px rgba(148, 74, 255, .08) inset;
+}
+
+/* logo */
+.about-card__media,
+.qs__logo {
+  width: 96px;
+  aspect-ratio: 1/1;
+  border-radius: 16px;
+  background: rgba(255,255,255,.04);
+  display: grid;
+  place-items: center;
+  padding: 10px;
+  justify-self: start;
+  align-self: start;
+  margin-right: clamp(12px, 2vw, 20px);
+  flex: 0 0 auto;
+}
+
+.qs__logo {
+  flex-shrink: 0;
+}
+
+.about-card__media img,
+.qs__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 18px rgba(150, 84, 255, .25));
+}
+
+/* contenido */
+.about-card__content,
+.qs__content {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  justify-content: center;
+  align-self: center;
+  flex: 1 1 auto;
+  min-width: 0; /* evita recortes del texto en contenedores flex */
+  max-width: 900px;
+}
+
+.qs__content {
+  flex: 1;
+  text-align: left;
+}
+
+.about-card__title,
+.qs__heading {
+  font-family: var(--display-hand, "MADE Soulmaze Brush", system-ui, sans-serif);
+  font-weight: 800;
+  letter-spacing: .3px;
+  font-size: clamp(20px, 2.4vw, 26px);
+  margin: 0;
+  line-height: 1.2;
+  text-shadow: 0 2px 10px rgba(0,0,0,.35);
+  margin-bottom: 6px;
+}
+
+.about-card__text,
+.qs__text {
+  color: rgba(255,255,255,.86);
+  line-height: 1.7;
+  font-size: clamp(14px, 1.6vw, 16px);
+  margin: 0;
+}
+
+/* Ocultar cualquier grupo de acciones/íconos que no necesitamos */
+.about-card__actions,
+.qs__actions,
+.about-card-actions,
+.qs-actions { display: none !important; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .about-card,
+  .qs__item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    min-height: unset;
+    padding: clamp(16px, 2.2vw, 22px);
+  }
+
+  .about-card__media,
+  .qs__logo {
+    order: 0 !important;
+    width: 96px;
+    margin-right: 0 !important;
+    margin-bottom: 12px !important;
+    align-self: center !important;
+  }
+
+  .about-card__content,
+  .qs__content {
+    order: 1 !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .qs__item { width: 100%; }
+}
+
+@media (min-width: 768px) {
+  .about-card,
+  .qs__item {
+    padding: clamp(18px, 2.4vw, 26px);
+  }
+
+  .about-card__media,
+  .qs__logo { width: 100px; }
+}
+
+@media (min-width: 1100px) {
+  .about,
+  .quienes,
+  .qs { max-width: 1200px; }
+  .about-card__media, .qs__logo { width: 112px; }
+}
+
+/* Evita cualquier desborde horizontal accidental */
+:host *, :host *::before, :host *::after { box-sizing: border-box; }
+:host { overflow-x: hidden; }

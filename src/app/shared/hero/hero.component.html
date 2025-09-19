@@ -1,0 +1,13 @@
+<section
+  class="hero custom-hero"
+  [style.background-image]="backgroundUrl ? 'url(' + backgroundUrl + ')' : ''"
+  role="img"
+  [attr.aria-label]="title || 'Hero section'">
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <h1 class="hero-title" *ngIf="title">{{ title }}</h1>
+      <p class="hero-subtitle" *ngIf="subtitle">{{ subtitle }}</p>
+    </div>
+  </div>
+</section>

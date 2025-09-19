@@ -1,0 +1,110 @@
+.footer {
+  background: #000;
+  color: #fff;
+}
+
+.footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Menú centrado con rieles punteados a los lados */
+.footer__menu {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+
+/* Marca */
+.footer__brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  img {
+    height: 34px; /* ajusta según mock */
+    display: block;
+  }
+}
+
+/* Menú central con separadores punteados */
+.footer__nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.82rem; /* ~13px */
+    color: #dcdcdc;
+    text-decoration: none;
+    transition: color .2s ease;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    &:hover { color: #fff; }
+  }
+}
+
+/* Separador punteado entre enlaces */
+.dot-sep {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffffff66;
+  display: inline-block;
+}
+
+/* Redes */
+.footer__social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  a { display: inline-flex; }
+  img {
+    width: 20px; height: 20px; display: block;
+    filter: brightness(1.1);
+    transition: opacity .2s ease;
+  }
+  a:hover img { opacity: .85; }
+}
+
+/* Franja inferior con línea punteada y copyright */
+.footer__bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px 20px 20px;
+  text-align: center;
+}
+
+
+.footer__copy {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  color: #dcdcdc;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .footer__inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px 24px;
+  }
+  .footer__nav { order: 3; width: 100%; justify-content: center; flex-wrap: wrap; }
+  .footer__brand { order: 1; }
+  .footer__social { order: 2; }
+  .footer__bottom { padding: 12px 20px 20px; }
+  .footer__menu { flex: 1 1 100%; justify-content: center; }
+  .rail { display: none; }
+}

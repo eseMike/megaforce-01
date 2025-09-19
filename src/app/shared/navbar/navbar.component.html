@@ -1,0 +1,26 @@
+<header class="nav">
+  <div class="nav__inner">
+    <!-- Brand / Logo -->
+    <a class="nav__brand" routerLink="/" (click)="close()" aria-label="Ir al inicio">
+      <!-- Si quieres usar un logo, descomenta y apunta al archivo correcto -->
+      <img src="assets/images/logo.png" alt="Megaforce" />
+    </a>
+
+    <!-- Hamburguesa (solo móvil) -->
+    <button class="nav__toggle" type="button" (click)="toggle()" aria-label="Abrir menú" aria-controls="main-menu" [attr.aria-expanded]="isOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Links -->
+    <nav id="main-menu" class="nav__links" [class.is-open]="isOpen" role="navigation">
+      <a routerLink="/" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }" (click)="close()">Inicio</a>
+      <a routerLink="/quienessomos" routerLinkActive="active" (click)="close()">Quiénes Somos</a>
+      <!-- <a routerLink="/catalogo" routerLinkActive="active" (click)="close()">Catálogo</a>  -->
+      <a routerLink="/galeria" routerLinkActive="active" (click)="close()">Galería</a>
+      <a routerLink="/servicios" routerLinkActive="active" (click)="close()">Servicios</a>
+      <a class="nav__lang" href="#" (click)="close()" title="Idioma">ES</a>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,57 @@
+/* === Fuente MADE Soulmaze Brush (local) === */
+@font-face {
+  font-family: "MADE Soulmaze Brush";
+  src: url("/assets/fonts/MADE-Soulmaze-Brush.woff2") format("woff2"),
+       url("/assets/fonts/MADE-Soulmaze-Brush.woff") format("woff"),
+       url("/assets/fonts/MADE-Soulmaze-Brush.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Helper para aplicarla sólo donde quieras */
+.soulmaze {
+  font-family: "MADE Soulmaze Brush", cursive;
+}
+
+/* === Fuente Helvetica (local) === */
+@font-face {
+  font-family: "Helvetica Custom";
+  src: url("/assets/fonts/Helvetica.woff2") format("woff2"),
+       url("/assets/fonts/Helvetica.woff") format("woff"),
+       url("/assets/fonts/Helvetica.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Helper para usarla fácil */
+.font-helvetica {
+  font-family: "Helvetica Custom", Arial, sans-serif;
+}
+
+/* Google fonts */
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+}
+
+/* Utilidades de peso (si las quieres usar) */
+.fw-400 { font-weight: 400; }
+.fw-500 { font-weight: 500; }
+.fw-600 { font-weight: 600; }
+.fw-700 { font-weight: 700; }
+
+/* === Helpers de tipografías (Google Fonts) === */
+.font-inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+}
+
+/* Alias opcional para compatibilidad con lo que ya traías */
+.inter { font-family: "Inter", sans-serif; font-optical-sizing: auto; }

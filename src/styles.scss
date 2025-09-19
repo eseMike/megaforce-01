@@ -1,0 +1,26 @@
+/* Importa las hojas de estilo originales */
+@import url('./styles/fonts.css');
+@import url('./styles/footer.css');
+@import url('./styles/form-info.css');
+@import url('./styles/galeria-sty.css');
+@import url('./styles/general-config.css');
+@import url('./styles/index-sty.css');
+@import url('./styles/nav.css');
+@import url('./styles/quienessomos-sty.css');
+@import url('./styles/servicios-sty.css');
+
+/* You can add global styles to this file, and also import other style files */
+
+/* Fondo global oscuro para todo el sitio */
+html, body, app-root, main {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: linear-gradient(180deg, #0d0d0d 0%, #1a1a1a 100%);
+  color: #fff;
+}
+
+/* Asegura que todas las secciones hereden el fondo */
+section {
+  background-color: transparent;
+}

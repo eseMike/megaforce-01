@@ -1,0 +1,10 @@
+<app-hero
+  [title]="'Galería'"
+  [subtitle]="'Conoce nuestros equipos de iluminación'"
+  [backgroundUrl]="'assets/images/fondo-personasAma.png'">
+</app-hero>
+
+<section class="gallery-page" aria-label="Listado de imágenes de la galería">
+  <!-- Reutilizamos el componente genérico de galería -->
+  <app-gallery [items]="galleryItems" variant="page"></app-gallery>
+</section>

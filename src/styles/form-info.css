@@ -1,0 +1,180 @@
+/* Estilos para la sección principal */
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 78px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+/* Estilos para el contenedor del formulario */
+.form-container {
+    max-width: 500px;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Eliminar animaciones/efectos en los inputs al seleccionar */
+.input-group input,
+.textarea-group textarea {
+    font-family: "Gilda Display", serif;
+    font-size: 15px;
+}
+
+.input-group input:focus,
+.textarea-group textarea:focus {
+    outline: none;
+    transform: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.input-group input::placeholder,
+.textarea-group textarea::placeholder {
+    color: rgb(255, 255, 255);
+    font-family: "Gilda Display", serif;
+    font-size: 15px;
+}
+
+/* Estilos para los grupos de entrada */
+.input-group input {
+    width: 431px;
+    height: 60px;
+    border-radius: 11px;
+    background-color: #2B3657;
+    border: none;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    color: white;
+    box-sizing: border-box;
+    transition: none !important;
+}
+
+/* Estilo para el área de texto */
+.textarea-group textarea {
+    width: 431px;
+    height: 175px;
+    border-radius: 11px;
+    background-color: #2B3657;
+    border: none;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: white;
+    box-sizing: border-box;
+    resize: none;
+    transition: none !important;
+}
+
+/* Centrar el botón del formulario */
+.submit-group {
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilo para el botón */
+.button-group {
+    background-color: #E8C889;
+    color: #2B3657;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 11px;
+    font-family: "Gilda Display", serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-group:hover {
+    background-color: #d4b57c;
+}
+
+/* Estilos para la información de contacto */
+.contact-info {
+    flex: 1;
+    max-width: 500px;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+/* Estilo para el título */
+.contact-title {
+    color: #E8C889;
+    margin-bottom: 30px;
+    font-size: 30px;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Estilos para el texto informativo */
+.info-text {
+    margin-bottom: 30px;
+}
+
+.info-text p {
+    font-family: 'Geomanist', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 0%;
+    text-align: justify;
+    color: #2B3657;
+    margin-bottom: 15px;
+}
+
+/* Estilos para los detalles de contacto */
+.contact-details p {
+    font-family: 'Geomanist', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 27px;
+    letter-spacing: 0%;
+    text-align: justify;
+    color: #2B3657;
+    margin-bottom: 15px;
+}
+
+/* Media queries para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .contact-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 20px 15px;
+    }
+
+    .form-container,
+    .contact-info {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .input-group input,
+    .textarea-group textarea {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contact-info {
+        order: -1;
+    }
+}
+
+/* Para pantallas muy pequeñas (móviles) */
+@media screen and (max-width: 480px) {
+    .input-group input {
+        height: 50px;
+    }
+
+    .contact-title {
+        font-size: 24px;
+    }
+
+    .contact-details p {
+        font-size: 16px;
+    }
+}

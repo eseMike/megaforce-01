@@ -1,0 +1,122 @@
+/* nav.css - VERSION BLINDADA CON MONTSERRAT */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* Reset absoluto para el navbar - no afectado por estilos globales */
+.navbar {
+    all: initial;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    background-color: black !important;
+    padding: 10px 40px !important;
+    width: 100% !important;
+    position: relative !important;
+    z-index: 1000 !important;
+    box-sizing: border-box !important;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.navbar * {
+    all: initial;
+    font-family: 'Montserrat', sans-serif !important;
+    box-sizing: border-box !important;
+}
+
+.nav-logo {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.nav-logo img {
+    height: 50px !important;
+    width: auto !important;
+    display: block !important;
+}
+
+.nav-logo a {
+    display: inline-block !important;
+    text-decoration: none !important;
+    background: none !important;
+    border: none !important;
+}
+
+.nav-links {
+    list-style: none !important;
+    display: flex !important;
+    gap: 20px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.nav-links li {
+    display: inline-block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.nav-links li a {
+    text-decoration: none !important;
+    color: white !important;
+    font-weight: 500 !important;
+    position: relative !important;
+    transition: color 0.3s ease !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 16px !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.nav-links li a::after {
+    content: "" !important;
+    position: absolute !important;
+    width: 0 !important;
+    height: 2px !important;
+    left: 0 !important;
+    bottom: -4px !important;
+    background-color: #ccc !important;
+    transition: width 0.3s ease !important;
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+    width: 100% !important;
+}
+
+.nav-links li a:hover {
+    color: #ccc !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 20px !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+    
+    .nav-links {
+        gap: 15px !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+    }
+    
+    .nav-links li a {
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-logo img {
+        height: 40px !important;
+    }
+    
+    .nav-links {
+        gap: 10px !important;
+    }
+    
+    .nav-links li a {
+        font-size: 12px !important;
+    }
+}
