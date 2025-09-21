@@ -1,5 +1,7 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import { TranslationService } from '../translation.service';
 
 export interface GalleryItem {
   src: string;
@@ -20,6 +22,7 @@ export type GalleryVariant = 'home' | 'page';
   styleUrl: './gallery.component.scss'
 })
 export class GalleryComponent {
+  readonly i18n = inject(TranslationService);
   /**
    * Items to render in the gallery. If empty, a small default set will be used (home variant).
    */
@@ -56,5 +59,13 @@ export class GalleryComponent {
 
   get isPage(): boolean {
     return this.variant === 'page';
+  }
+
+  get resolvedTitle(): string | undefined {
+    return this.title ?? this.i18n.t('gallery.title');
+  }
+
+  get resolvedSubtitle(): string | undefined {
+    return this.subtitle ?? this.i18n.t('gallery.subtitle');
   }
 }

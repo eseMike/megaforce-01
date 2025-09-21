@@ -32,6 +32,13 @@ const TRANSLATIONS: Translations = {
     // Gallery
     'gallery.title': 'Galería',
     'gallery.subtitle': 'Conoce nuestros equipos de iluminación',
+    'gallery.filter.audio': 'Audio',
+    'gallery.filter.lights': 'Luces',
+    'gallery.filter.dj': 'DJ',
+    'gallery.filter.packages': 'Paquetes',
+    'gallery.play': 'Reproducir',
+    'gallery.see': 'Conócelo',
+    'gallery.more': 'Conoce toda Nuestra Galería',
 
     // About / Quienes Somos (ejemplos)
     'about.title': 'Quiénes Somos',
@@ -106,6 +113,14 @@ const TRANSLATIONS: Translations = {
     'testimonials.2.author': 'Reseña en Facebook',
     'testimonials.3.text': 'Súper recomendable, muy puntuales, pusieron el ambiente y se adaptan a la música que quieras escuchar en tu evento 100 de 10 🎉🎉🎉🎉',
     'testimonials.3.author': 'Reseña en Facebook',
+    // Contact section
+    'contact.title': 'Déjanos conocerte',
+    'contact.subtitle': 'Estamos en contacto contigo',
+    'contact.name': 'Nombre',
+    'contact.email': 'Correo Electrónico',
+    'contact.phone': 'Número de teléfono',
+    'contact.message': 'Escribe tu mensaje',
+    'contact.submit': 'Enviar',
   },
   en: {
     // Navbar
@@ -123,6 +138,13 @@ const TRANSLATIONS: Translations = {
     // Gallery
     'gallery.title': 'Gallery',
     'gallery.subtitle': 'Discover our lighting gear',
+    'gallery.filter.audio': 'Audio',
+    'gallery.filter.lights': 'Lights',
+    'gallery.filter.dj': 'DJ',
+    'gallery.filter.packages': 'Packages',
+    'gallery.play': 'Play',
+    'gallery.see': 'See details',
+    'gallery.more': 'See full gallery',
 
     // About
     'about.title': 'About Us',
@@ -197,6 +219,14 @@ const TRANSLATIONS: Translations = {
     'testimonials.2.author': 'Facebook review',
     'testimonials.3.text': 'Highly recommended, very punctual, they set the vibe and adapt to the music you want to hear at your event. 100 out of 10 🎉🎉🎉🎉',
     'testimonials.3.author': 'Facebook review',
+    // Contact section
+    'contact.title': 'Get in Touch',
+    'contact.subtitle': 'We’ll get back to you shortly',
+    'contact.name': 'Name',
+    'contact.email': 'Email',
+    'contact.phone': 'Phone number',
+    'contact.message': 'Write your message',
+    'contact.submit': 'Send',
   },
 };
 

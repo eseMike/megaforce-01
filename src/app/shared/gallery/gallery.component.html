@@ -2,13 +2,13 @@
   <div class="gallery__container">
     <header class="gallery__head">
       <h2 id="gallery-title" class="gallery__title">
-        <span class="gallery__title-hand">Galería</span>
+        <span class="gallery__title-hand">{{ resolvedTitle }}</span>
       </h2>
       <nav class="gallery__filters" aria-label="Filtros de galería">
-        <button class="pill is-active" type="button">Audio</button>
-        <button class="pill" type="button">Luces</button>
-        <button class="pill" type="button">DJ</button>
-        <button class="pill" type="button">Paquetes</button>
+        <button class="pill is-active" type="button">{{ i18n.t('gallery.filter.audio') }}</button>
+        <button class="pill" type="button">{{ i18n.t('gallery.filter.lights') }}</button>
+        <button class="pill" type="button">{{ i18n.t('gallery.filter.dj') }}</button>
+        <button class="pill" type="button">{{ i18n.t('gallery.filter.packages') }}</button>
       </nav>
     </header>
 
@@ -18,8 +18,8 @@
         <span class="gallery-card__frame"></span>
         <div class="gallery-card__body">
           <div class="gallery-card__actions">
-            <button class="btn btn--play" type="button">Reproducir</button>
-            <a class="btn btn--primary" href="#">Conócelo</a>
+            <button class="btn btn--play" type="button">{{ i18n.t('gallery.play') }}</button>
+            <a class="btn btn--primary" href="#">{{ i18n.t('gallery.see') }}</a>
           </div>
         </div>
       </article>
@@ -29,8 +29,8 @@
         <span class="gallery-card__frame"></span>
         <div class="gallery-card__body">
           <div class="gallery-card__actions">
-            <button class="btn btn--play" type="button">Reproducir</button>
-            <a class="btn btn--primary" href="#">Conócelo</a>
+            <button class="btn btn--play" type="button">{{ i18n.t('gallery.play') }}</button>
+            <a class="btn btn--primary" href="#">{{ i18n.t('gallery.see') }}</a>
           </div>
         </div>
       </article>
@@ -40,8 +40,8 @@
         <span class="gallery-card__frame"></span>
         <div class="gallery-card__body">
           <div class="gallery-card__actions">
-            <button class="btn btn--play" type="button">Reproducir</button>
-            <a class="btn btn--primary" href="#">Conócelo</a>
+            <button class="btn btn--play" type="button">{{ i18n.t('gallery.play') }}</button>
+            <a class="btn btn--primary" href="#">{{ i18n.t('gallery.see') }}</a>
           </div>
         </div>
       </article>
@@ -51,8 +51,8 @@
         <span class="gallery-card__frame"></span>
         <div class="gallery-card__body">
           <div class="gallery-card__actions">
-            <button class="btn btn--play" type="button">Reproducir</button>
-            <a class="btn btn--primary" href="#">Conócelo</a>
+            <button class="btn btn--play" type="button">{{ i18n.t('gallery.play') }}</button>
+            <a class="btn btn--primary" href="#">{{ i18n.t('gallery.see') }}</a>
           </div>
         </div>
       </article>
@@ -62,8 +62,8 @@
         <span class="gallery-card__frame"></span>
         <div class="gallery-card__body">
           <div class="gallery-card__actions">
-            <button class="btn btn--play" type="button">Reproducir</button>
-            <a class="btn btn--primary" href="#">Conócelo</a>
+            <button class="btn btn--play" type="button">{{ i18n.t('gallery.play') }}</button>
+            <a class="btn btn--primary" href="#">{{ i18n.t('gallery.see') }}</a>
           </div>
         </div>
       </article>
@@ -73,15 +73,15 @@
         <span class="gallery-card__frame"></span>
         <div class="gallery-card__body">
           <div class="gallery-card__actions">
-            <button class="btn btn--play" type="button">Reproducir</button>
-            <a class="btn btn--primary" href="#">Conócelo</a>
+            <button class="btn btn--play" type="button">{{ i18n.t('gallery.play') }}</button>
+            <a class="btn btn--primary" href="#">{{ i18n.t('gallery.see') }}</a>
           </div>
         </div>
       </article>
     </div>
 
     <div class="gallery__cta">
-      <a class="btn btn--primary" href="#">Conoce toda Nuestra Galerí</a>
+      <a class="btn btn--primary" href="#">{{ i18n.t('gallery.more') }}</a>
     </div>
   </div>
 </section>
