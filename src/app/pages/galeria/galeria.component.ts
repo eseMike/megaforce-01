@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TranslationService } from '../../shared/translation.service';
 import { CommonModule } from '@angular/common';
 import { GalleryComponent } from '../../shared/gallery/gallery.component';
 import { HeroComponent } from '../../shared/hero/hero.component';
@@ -11,6 +12,7 @@ import { HeroComponent } from '../../shared/hero/hero.component';
   styleUrl: './galeria.component.scss'
 })
 export class GaleriaComponent {
+  readonly i18n = inject(TranslationService);
   readonly galleryItems = [
     { src: 'assets/images/evento1.jpg', alt: 'Evento 1' },
     { src: 'assets/images/evento2.jpg', alt: 'Evento 2' },

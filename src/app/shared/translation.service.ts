@@ -29,6 +29,10 @@ const TRANSLATIONS: Translations = {
     'hero.ctaPrimary': 'Cotizar ahora',
     'hero.ctaSecondary': 'Ver galería',
 
+    // Gallery
+    'gallery.title': 'Galería',
+    'gallery.subtitle': 'Conoce nuestros equipos de iluminación',
+
     // About / Quienes Somos (ejemplos)
     'about.title': 'Quiénes Somos',
     'about.body':
@@ -115,6 +119,10 @@ const TRANSLATIONS: Translations = {
     'hero.subtitle': 'Taking your event to the next level',
     'hero.ctaPrimary': 'Get a quote',
     'hero.ctaSecondary': 'View gallery',
+
+    // Gallery
+    'gallery.title': 'Gallery',
+    'gallery.subtitle': 'Discover our lighting gear',
 
     // About
     'about.title': 'About Us',
