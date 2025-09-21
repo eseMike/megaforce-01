@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TranslationService } from '../translation.service';
 
 @Component({
   selector: 'app-discover',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './discover.component.scss'
 })
 export class DiscoverComponent {
-
+  readonly i18n = inject(TranslationService);
 }

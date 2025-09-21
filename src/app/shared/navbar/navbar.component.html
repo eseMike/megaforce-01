@@ -15,12 +15,12 @@
 
     <!-- Links -->
     <nav id="main-menu" class="nav__links" [class.is-open]="isOpen" role="navigation">
-      <a routerLink="/" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }" (click)="close()">Inicio</a>
-      <a routerLink="/quienessomos" routerLinkActive="active" (click)="close()">Quiénes Somos</a>
+      <a routerLink="/" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }" (click)="close()">{{ i18n.t('nav.home') }}</a>
+      <a routerLink="/quienessomos" routerLinkActive="active" (click)="close()">{{ i18n.t('nav.about') }}</a>
       <!-- <a routerLink="/catalogo" routerLinkActive="active" (click)="close()">Catálogo</a>  -->
-      <a routerLink="/galeria" routerLinkActive="active" (click)="close()">Galería</a>
-      <a routerLink="/servicios" routerLinkActive="active" (click)="close()">Servicios</a>
-      <a class="nav__lang" href="#" (click)="close()" title="Idioma">ES</a>
+      <a routerLink="/galeria" routerLinkActive="active" (click)="close()">{{ i18n.t('nav.gallery') }}</a>
+      <a routerLink="/servicios" routerLinkActive="active" (click)="close()">{{ i18n.t('nav.services') }}</a>
+      <button class="nav__lang" type="button" (click)="toggleLang(); close()" title="Idioma">{{ langLabel }}</button>
     </nav>
   </div>
 </header>
