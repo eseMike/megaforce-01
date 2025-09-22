@@ -148,3 +148,25 @@
   .testimonial-card__avatar { width: 48px; height: 48px; }
   .testimonial-card__stars { font-size: 14px; }
 }
+
+/* Larger and styled button for testimonials link */
+.testimonials__more--large {
+  display: inline-block;
+  margin: 40px auto 0;
+  padding: 14px 28px;
+  font-size: clamp(18px, 2.5vw, 22px);
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  background-color: #9b5cff;
+  border: 2px solid #9b5cff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    background-color: transparent;
+    transform: scale(1.05);
+    color: #ffffff;
+  }
+}

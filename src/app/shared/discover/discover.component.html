@@ -25,40 +25,40 @@
   <div class="discover__row discover__row--services">
     <div class="services__grid" aria-label="Nuestros servicios">
       <article class="service-card">
-        <a class="service-link" href="#" aria-label="Ver servicio de Audio">
+        <a class="service-link" href="/servicios#svc-1" [attr.aria-label]="i18n.t('services.card1.title')">
           <figure class="service-figure">
             <img src="assets/images/recuadroAudio.png"
-                 alt="Consola de audio profesional para eventos"
+                 alt="{{ i18n.t('services.card1.title') }}"
                  loading="lazy"
                  decoding="async" />
           </figure>
         </a>
       </article>
       <article class="service-card">
-        <a class="service-link" href="#" aria-label="Ver servicio de Luces">
+        <a class="service-link" href="/servicios#svc-2" [attr.aria-label]="i18n.t('services.card2.title')">
           <figure class="service-figure">
             <img src="assets/images/recuadroLuces.png"
-                 alt="Luces y escenario para conciertos en vivo"
+                 alt="{{ i18n.t('services.card2.title') }}"
                  loading="lazy"
                  decoding="async" />
           </figure>
         </a>
       </article>
       <article class="service-card">
-        <a class="service-link" href="#" aria-label="Ver servicio de DJ">
+        <a class="service-link" href="/servicios#svc-3" [attr.aria-label]="i18n.t('services.card3.title')">
           <figure class="service-figure">
             <img src="assets/images/recuadroDj.png"
-                 alt="DJ en cabina mezclando música en vivo"
+                 alt="{{ i18n.t('services.card3.title') }}"
                  loading="lazy"
                  decoding="async" />
           </figure>
         </a>
       </article>
       <article class="service-card">
-        <a class="service-link" href="#" aria-label="Ver paquetes disponibles">
+        <a class="service-link" href="/servicios#svc-4" [attr.aria-label]="i18n.t('services.card4.title')">
           <figure class="service-figure">
             <img src="assets/images/recuadroPaq.png"
-                 alt="Fuegos artificiales y paquetes de producción audiovisual"
+                 alt="{{ i18n.t('services.card4.title') }}"
                  loading="lazy"
                  decoding="async" />
           </figure>
@@ -76,7 +76,7 @@
         <li>{{ i18n.t('discover.coverage1') }}</li>
         <li>{{ i18n.t('discover.coverage2') }}</li>
       </ul>
-      <a class="btn btn--ghost" href="#" role="button" aria-label="Descubre más de nuestros paquetes">
+      <a class="btn btn--ghost" href="/servicios" role="button" [attr.aria-label]="i18n.t('discover.cta')">
         {{ i18n.t('discover.cta') }}
         <span class="btn__icon" aria-hidden="true">→</span>
       </a>

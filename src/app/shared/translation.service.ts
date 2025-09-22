@@ -24,8 +24,8 @@ const TRANSLATIONS: Translations = {
     'nav.services': 'Servicios',
 
     // Hero
-    'hero.title': 'DJ Máximo',
-    'hero.subtitle': 'Elevando tu evento al siguiente nivel',
+    'hero.title': 'El mejor concepto de antro en casa.',
+    'hero.subtitle': '¡Vive el momento, nosotros nos encargamos del resto!',
     'hero.ctaPrimary': 'Cotizar ahora',
     'hero.ctaSecondary': 'Ver galería',
 
@@ -95,6 +95,9 @@ const TRANSLATIONS: Translations = {
     'services.card2.item2': 'Pista de baile (led pixel).',
     'services.card2.item3': 'Show batucada.',
     'services.card2.item4': 'Barra de bebidas iluminada, con bartenders.',
+    'services.card2.item5': 'Pista de baile en cristal iluminada y led pixel.',
+    'services.card2.item6': 'Karaoke.',
+    'services.card2.item7': 'Pantallas pitch 3.9.',
 
     'services.card3.title': 'DJ (solo)',
     'services.card3.text': 'Si ya cuentas con todo para tu evento y lo único que necesitas es un DJ, nosotros te brindamos el servicio llevando al DJ correcto para el tipo de evento que vas a tener.',
@@ -130,8 +133,8 @@ const TRANSLATIONS: Translations = {
     'nav.services': 'Services',
 
     // Hero
-    'hero.title': 'DJ Máximo',
-    'hero.subtitle': 'Taking your event to the next level',
+    'hero.title': 'The best club-at-home concept',
+    'hero.subtitle': 'Live the moment, we handle the rest!',
     'hero.ctaPrimary': 'Get a quote',
     'hero.ctaSecondary': 'View gallery',
 
@@ -201,6 +204,9 @@ const TRANSLATIONS: Translations = {
     'services.card2.item2': 'LED pixel dance floor.',
     'services.card2.item3': 'Batucada show.',
     'services.card2.item4': 'Illuminated bar with bartenders.',
+    'services.card2.item5': 'Crystal dance floor with LED pixel lighting.',
+    'services.card2.item6': 'Karaoke.',
+    'services.card2.item7': 'Pitch 3.9 LED screens.',
 
     'services.card3.title': 'DJ only',
     'services.card3.text': 'If you already have everything for your event and only need a DJ, we provide the right DJ for the type of event you are having.',

@@ -13,75 +13,35 @@
     </header>
 
     <div class="gallery__grid" role="list">
-      <article class="gallery-card" role="listitem">
-        <img class="gallery-card__image" src="/assets/images/evento1.jpg" alt="Luces y consola en espectáculo en vivo" loading="lazy" />
+      <article class="gallery-card" role="listitem"
+               *ngFor="let item of (items && items.length ? items : defaultHomeItems)">
+        <img class="gallery-card__image"
+             [src]="item.src"
+             [alt]="item.alt || item.title"
+             loading="lazy" />
         <span class="gallery-card__frame"></span>
-        <div class="gallery-card__body">
-          <div class="gallery-card__actions">
-            <button class="btn btn--play" type="button">{{ i18n.t('gallery.play') }}</button>
-            <a class="btn btn--primary" href="#">{{ i18n.t('gallery.see') }}</a>
-          </div>
-        </div>
-      </article>
 
-      <article class="gallery-card" role="listitem">
-        <img class="gallery-card__image" src="/assets/images/evento2.jpg" alt="Multitudes con iluminación intensa en concierto" loading="lazy" />
-        <span class="gallery-card__frame"></span>
         <div class="gallery-card__body">
-          <div class="gallery-card__actions">
-            <button class="btn btn--play" type="button">{{ i18n.t('gallery.play') }}</button>
-            <a class="btn btn--primary" href="#">{{ i18n.t('gallery.see') }}</a>
-          </div>
-        </div>
-      </article>
+          <h3 class="gallery-card__title" *ngIf="item.title">{{ item.title }}</h3>
 
-      <article class="gallery-card" role="listitem">
-        <img class="gallery-card__image" src="/assets/images/evento3.jpg" alt="Pista con confeti y efectos especiales" loading="lazy" />
-        <span class="gallery-card__frame"></span>
-        <div class="gallery-card__body">
           <div class="gallery-card__actions">
-            <button class="btn btn--play" type="button">{{ i18n.t('gallery.play') }}</button>
-            <a class="btn btn--primary" href="#">{{ i18n.t('gallery.see') }}</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="gallery-card" role="listitem">
-        <img class="gallery-card__image" src="/assets/images/evento4.jpg" alt="DJ en cabina con público" loading="lazy" />
-        <span class="gallery-card__frame"></span>
-        <div class="gallery-card__body">
-          <div class="gallery-card__actions">
-            <button class="btn btn--play" type="button">{{ i18n.t('gallery.play') }}</button>
-            <a class="btn btn--primary" href="#">{{ i18n.t('gallery.see') }}</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="gallery-card" role="listitem">
-        <img class="gallery-card__image" src="/assets/images/evento5.jpg" alt="Escenario con show de luces" loading="lazy" />
-        <span class="gallery-card__frame"></span>
-        <div class="gallery-card__body">
-          <div class="gallery-card__actions">
-            <button class="btn btn--play" type="button">{{ i18n.t('gallery.play') }}</button>
-            <a class="btn btn--primary" href="#">{{ i18n.t('gallery.see') }}</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="gallery-card" role="listitem">
-        <img class="gallery-card__image" src="/assets/images/evento6.jpg" alt="Fuegos artificiales y luces en festival nocturno" loading="lazy" />
-        <span class="gallery-card__frame"></span>
-        <div class="gallery-card__body">
-          <div class="gallery-card__actions">
-            <button class="btn btn--play" type="button">{{ i18n.t('gallery.play') }}</button>
-            <a class="btn btn--primary" href="#">{{ i18n.t('gallery.see') }}</a>
+            <a class="btn btn--primary"
+               [href]="item.actionHref || '#'"
+               [attr.aria-label]="item.actionLabel || i18n.t('gallery.see')">
+              {{ item.actionLabel || i18n.t('gallery.see') }}
+            </a>
           </div>
         </div>
       </article>
     </div>
 
     <div class="gallery__cta">
-      <a class="btn btn--primary" href="#">{{ i18n.t('gallery.more') }}</a>
+      <a class="btn btn--primary"
+         href="https://www.instagram.com/megaforce.01"
+         target="_blank"
+         rel="noopener noreferrer">
+         {{ i18n.t('gallery.more') }}
+      </a>
     </div>
   </div>
 </section>
