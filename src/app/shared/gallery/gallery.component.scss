@@ -225,3 +225,30 @@ $accent-end: #a855f7;   // purple
 
 /* Safety: prevent horizontal overflow on small screens */
 .gallery, .gallery * { max-width: 100%; }
+
+/* === Tabs polish & accessibility === */
+.gallery__filters {
+  justify-content: center; /* center pills in header */
+
+  .pill {
+    padding: 10px 18px;          /* a bit larger tap target */
+    font-size: 15px;             /* slightly bigger label */
+
+    &:focus-visible {
+      outline: 2px solid $accent-end; /* purple focus ring */
+      outline-offset: 2px;
+    }
+
+    &.is-active {
+      color: $white;
+      box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.35) inset,
+                  0 6px 16px rgba(0, 0, 0, 0.35);
+      transform: none; /* keep steady while active */
+    }
+  }
+}
+
+/* Slight breathing room below filters on small screens */
+@media (max-width: 640px) {
+  .gallery__head { margin-bottom: clamp(16px, 6vw, 32px); }
+}

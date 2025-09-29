@@ -5,16 +5,21 @@
         <span class="gallery__title-hand">{{ resolvedTitle }}</span>
       </h2>
       <nav class="gallery__filters" aria-label="Filtros de galería">
-        <button class="pill is-active" type="button">{{ i18n.t('gallery.filter.audio') }}</button>
-        <button class="pill" type="button">{{ i18n.t('gallery.filter.lights') }}</button>
-        <button class="pill" type="button">{{ i18n.t('gallery.filter.dj') }}</button>
-        <button class="pill" type="button">{{ i18n.t('gallery.filter.packages') }}</button>
+        <button
+          *ngFor="let tab of tabs"
+          class="pill"
+          [class.is-active]="activeTab === tab.key"
+          type="button"
+          (click)="setActiveTab(tab.key)"
+        >
+          {{ i18n.t(tab.labelKey) }}
+        </button>
       </nav>
     </header>
 
     <div class="gallery__grid" role="list">
       <article class="gallery-card" role="listitem"
-               *ngFor="let item of (items && items.length ? items : defaultHomeItems)">
+               *ngFor="let item of currentItems">
         <img class="gallery-card__image"
              [src]="item.src"
              [alt]="item.alt || item.title"
@@ -37,10 +42,10 @@
 
     <div class="gallery__cta">
       <a class="btn btn--primary"
-         href="https://www.instagram.com/megaforce.01"
+         [href]="moreLinkHref"
          target="_blank"
          rel="noopener noreferrer">
-         {{ i18n.t('gallery.more') }}
+         {{ moreLinkLabel }}
       </a>
     </div>
   </div>

@@ -36,6 +36,10 @@ const TRANSLATIONS: Translations = {
     'gallery.filter.lights': 'Luces',
     'gallery.filter.dj': 'DJ',
     'gallery.filter.packages': 'Paquetes',
+    'gallery.filter.photos': 'Fotos',
+    'gallery.filter.videos': 'Videos',
+    'gallery.morePhotos': 'Ver más fotos',
+    'gallery.moreVideos': 'Ver más videos',
     'gallery.play': 'Reproducir',
     'gallery.see': 'Conócelo',
     'gallery.more': 'Conoce toda Nuestra Galería',
@@ -43,8 +47,7 @@ const TRANSLATIONS: Translations = {
     // About / Quienes Somos (ejemplos)
     'about.title': 'Quiénes Somos',
     'about.body':
-      'Somos DJ Máximo: música, producción y energía que transforman cualquier evento. ' +
-      'Trabajamos contigo para crear experiencias memorables.',
+      'Somos una empresa 100 % mexicana dedicada a brindar servicios para eventos sociales, tales como: DJ, audio e iluminación, animación, mobiliario, entre otros, que te hacen vivir la experiencia del mejor concepto de "antro en casa". Música, producción y energía que transforman cualquier evento. Trabajamos contigo para crear experiencias memorables.',
 
     // Discover section
     'discover.title': 'Descubre nuestra variedad',
@@ -91,7 +94,6 @@ const TRANSLATIONS: Translations = {
 
     'services.card2.title': 'Extras para antro en casa',
     'services.card2.text': 'Para brindarte una mejor experiencia de nuestro concepto “antro en casa”, contamos con los complementos perfectos:',
-    'services.card2.item1': 'Salas lounge y periqueras.',
     'services.card2.item2': 'Pista de baile (led pixel).',
     'services.card2.item3': 'Show batucada.',
     'services.card2.item4': 'Barra de bebidas iluminada, con bartenders.',
@@ -145,6 +147,10 @@ const TRANSLATIONS: Translations = {
     'gallery.filter.lights': 'Lights',
     'gallery.filter.dj': 'DJ',
     'gallery.filter.packages': 'Packages',
+    'gallery.filter.photos': 'Photos',
+    'gallery.filter.videos': 'Videos',
+    'gallery.morePhotos': 'See more photos',
+    'gallery.moreVideos': 'See more videos',
     'gallery.play': 'Play',
     'gallery.see': 'See details',
     'gallery.more': 'See full gallery',
@@ -200,7 +206,6 @@ const TRANSLATIONS: Translations = {
 
     'services.card2.title': 'Club-at-home Extras',
     'services.card2.text': 'To give you the best experience of our “club at home” concept, we have the perfect add-ons:',
-    'services.card2.item1': 'Lounge sofas and cocktail tables.',
     'services.card2.item2': 'LED pixel dance floor.',
     'services.card2.item3': 'Batucada show.',
     'services.card2.item4': 'Illuminated bar with bartenders.',
