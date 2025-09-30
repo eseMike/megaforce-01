@@ -19,8 +19,20 @@ export class TestimonialsComponent {
    * automáticamente cuando se alterne el idioma.
    */
   readonly items = [
-    { textKey: 'testimonials.1.text', authorKey: 'testimonials.1.author' },
-    { textKey: 'testimonials.2.text', authorKey: 'testimonials.2.author' },
-    { textKey: 'testimonials.3.text', authorKey: 'testimonials.3.author' },
+    {
+      textKey: 'testimonials.1.text',
+      authorKey: 'testimonials.1.author',
+      image: 'assets/testimonios/testimonial1.jpg'
+    },
+    {
+      textKey: 'testimonials.2.text',
+      authorKey: 'testimonials.2.author',
+      image: 'assets/testimonios/testimonial2.jpg'
+    },
+    {
+      textKey: 'testimonials.3.text',
+      authorKey: 'testimonials.3.author',
+      image: 'assets/testimonios/testimonial3.jpg'
+    },
   ];
 }

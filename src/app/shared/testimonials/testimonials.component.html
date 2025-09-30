@@ -15,14 +15,14 @@
           <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
         </div>
         <div class="testimonial-card__author">
-          <img class="testimonial-card__avatar" src="assets/images/evento1.jpg" alt="Foto del cliente" />
+          <img class="testimonial-card__avatar" [src]="t.image" alt="Foto de {{ i18n.t(t.authorKey) }}" />
           <div class="testimonial-card__name">{{ i18n.t(t.authorKey) }}</div>
         </div>
       </article>
     </div>
     <a
       class="btn btn--primary testimonials__more testimonials__more--large"
-      href="https://www.facebook.com/Megaforce01/reviews"
+      href="https://m.facebook.com/Megaforce01/reviews/"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Ver más opiniones en Facebook"
