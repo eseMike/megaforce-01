@@ -30,7 +30,9 @@
   align-items: center;
   text-decoration: none;
   img {
-    height: 34px; /* ajusta según mock */
+    height: 80px; /* ajusta según mock */
+    width: auto;
+    margin: 0 auto;
     display: block;
   }
 }
@@ -107,4 +109,7 @@
   .footer__bottom { padding: 12px 20px 20px; }
   .footer__menu { flex: 1 1 100%; justify-content: center; }
   .rail { display: none; }
+  .footer__brand img {
+    height: 60px;
+  }
 }
