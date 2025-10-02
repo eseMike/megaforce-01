@@ -16,8 +16,8 @@
       <a routerLink="/" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }" (click)="close()">{{ i18n.t('nav.home') }}</a>
       <a routerLink="/quienessomos" routerLinkActive="active" (click)="close()">{{ i18n.t('nav.about') }}</a>
       <!-- <a routerLink="/catalogo" routerLinkActive="active" (click)="close()">Catálogo</a>  -->
-      <a routerLink="/galeria" routerLinkActive="active" (click)="close()">{{ i18n.t('nav.gallery') }}</a>
       <a routerLink="/servicios" routerLinkActive="active" (click)="close()">{{ i18n.t('nav.services') }}</a>
+      <a routerLink="/galeria" routerLinkActive="active" (click)="close()">{{ i18n.t('nav.gallery') }}</a>
       <button class="nav__lang" type="button" (click)="toggleLang(); close()" title="Idioma">{{ langLabel }}</button>
     </nav>
   </div>
