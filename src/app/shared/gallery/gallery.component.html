@@ -28,14 +28,6 @@
 
         <div class="gallery-card__body">
           <h3 class="gallery-card__title" *ngIf="item.title">{{ item.title }}</h3>
-
-          <div class="gallery-card__actions">
-            <a class="btn btn--primary"
-               [href]="item.actionHref || '#'"
-               [attr.aria-label]="item.actionLabel || i18n.t('gallery.see')">
-              {{ item.actionLabel || i18n.t('gallery.see') }}
-            </a>
-          </div>
         </div>
       </article>
     </div>

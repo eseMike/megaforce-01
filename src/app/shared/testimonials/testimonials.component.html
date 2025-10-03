@@ -12,14 +12,23 @@
           <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
         </div>
         <div class="testimonial-card__author">
-          <img class="testimonial-card__avatar" [src]="t.image" alt="Foto de {{ i18n.t(t.authorKey) }}" />
+          <img
+            class="testimonial-card__avatar"
+            [src]="t.image"
+            (error)="onImgError($event)"
+            alt="Foto de {{ i18n.t(t.authorKey) }}"
+            loading="lazy"
+            decoding="async"
+            width="64"
+            height="64"
+          />
           <div class="testimonial-card__name">{{ i18n.t(t.authorKey) }}</div>
         </div>
       </article>
     </div>
     <a
       class="btn btn--primary testimonials__more testimonials__more--large"
-      href="https://m.facebook.com/Megaforce01/reviews/"
+      href="https://www.facebook.com/Megaforce01/reviews/"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Ver más opiniones en Facebook"

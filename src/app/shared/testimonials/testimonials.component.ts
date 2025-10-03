@@ -34,5 +34,18 @@ export class TestimonialsComponent {
       authorKey: 'testimonials.3.author',
       image: 'assets/testimonios/testimonial3.jpg'
     },
+    {
+      textKey: 'testimonials.4.text',
+      authorKey: 'testimonials.4.author',
+      image: 'assets/testimonios/testimonial4.jpg'
+    },
   ];
+
+  onImgError(event: Event) {
+    const target = event.target as HTMLImageElement | null;
+    if (target) {
+      target.src = 'assets/testimonios/fallback.jpg';
+    }
+  }
+
 }

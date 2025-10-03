@@ -121,6 +121,9 @@ const TRANSLATIONS: Translations = {
     'testimonials.3.text': 'Súper recomendable, muy puntuales, pusieron el ambiente y se adaptan a la música que quieras escuchar en tu evento 100 de 10 🎉🎉🎉🎉',
     'testimonials.3.author': 'Ere Lara',
     'testimonials.3.photo': 'assets/testimonios/testimonial3.jpg',
+    'testimonials.4.text': '¡Increíble experiencia! Hicieron que mi fiesta fuera increíble gracias al ambiente. Ampliamente recomendado 🥰',
+    'testimonials.4.author': 'Camila Freige',
+    'testimonials.4.photo': 'assets/testimonios/testimonial4.jpg',
     // Contact section
     'contact.title': 'Déjanos conocerte',
     'contact.subtitle': 'Estamos en contacto contigo',
@@ -236,6 +239,9 @@ const TRANSLATIONS: Translations = {
     'testimonials.3.text': 'Highly recommended, very punctual, they set the vibe and adapt to the music you want to hear at your event. 100 out of 10 🎉🎉🎉🎉',
     'testimonials.3.author': 'Ere Lara',
     'testimonials.3.photo': 'assets/testimonios/testimonial3.jpg',
+    'testimonials.4.text': 'Amazing experience! They made my party incredible thanks to the atmosphere. Highly recommended 🥰',
+    'testimonials.4.author': 'Camila Freige',
+    'testimonials.4.photo': 'assets/testimonios/testimonial4.jpg',
     // Contact section
     'contact.title': 'Get in Touch',
     'contact.subtitle': 'We’ll get back to you shortly',
