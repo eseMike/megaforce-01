@@ -91,12 +91,12 @@
   .hero-title {
     font-size: clamp(1.75rem, 8vw, 40px);
     line-height: 1.2;
-    text-align: left;
+    text-align: center;
   }
 
   .hero-subtitle {
     font-size: clamp(0.9rem, 3.5vw, 16px);
-    text-align: left;
+    text-align: center;
   }
 }
 
@@ -113,6 +113,10 @@
   .hero-content {
     text-align: center;
     padding-block: clamp(40px, 10vh, 120px);
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .hero-title {
