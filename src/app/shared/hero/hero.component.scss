@@ -131,3 +131,18 @@
       radial-gradient(70% 70% at 50% 60%, rgba(0,0,0,.08) 0%, rgba(0,0,0,.25) 100%);
   }
 }
+
+.hero-logo {
+  display: block;
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 24px auto; /* centrado y con espacio inferior */
+}
+
+@media (max-width: 768px) {
+  .hero-logo {
+    max-width: 200px;
+    margin-bottom: 16px;
+  }
+}

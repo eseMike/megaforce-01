@@ -33,6 +33,7 @@
         </article>
       </ng-container>
 
+
       <!-- Packages tab: cada paquete = 2 tarjetas independientes (ficha izquierda, setup derecha) -->
       <ng-container *ngIf="activeTab === 'packages'">
         <ng-container *ngFor="let pack of packages; let i = index">
@@ -54,13 +55,28 @@
       </ng-container>
     </div>
 
-    <div class="gallery__cta">
-      <a class="btn btn--primary"
-         [href]="moreLinkHref"
-         target="_blank"
-         rel="noopener noreferrer">
-         {{ moreLinkLabel }}
-      </a>
+    <!-- CTA: Ver más / Ver menos (solo en pestaña Fotos) -->
+    <div class="gallery__cta" *ngIf="activeTab === 'photos'">
+      <button *ngIf="!showMore" class="btn btn--primary" type="button" (click)="toggleMore()">
+        Ver más fotos
+      </button>
+      <button *ngIf="showMore" class="btn" type="button" (click)="toggleMore()">
+        Ver menos
+      </button>
+    </div>
+
+    <!-- Segunda grilla (idéntica a la principal) -->
+    <div class="gallery__grid gallery__grid--extra" role="list" *ngIf="activeTab === 'photos' && showMore">
+      <article class="gallery-card" role="listitem" *ngFor="let extra of extraItems">
+        <img class="gallery-card__image"
+             [src]="extra.src"
+             [alt]="extra.alt || extra.title"
+             loading="lazy" />
+        <span class="gallery-card__frame"></span>
+        <div class="gallery-card__body">
+          <h3 class="gallery-card__title" *ngIf="extra.title">{{ extra.title }}</h3>
+        </div>
+      </article>
     </div>
   </div>
 </section>

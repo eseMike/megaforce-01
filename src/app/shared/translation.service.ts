@@ -97,7 +97,7 @@ const TRANSLATIONS: Translations = {
     'services.card2.item2': 'Pista de baile (led pixel).',
     'services.card2.item3': 'Show batucada.',
     'services.card2.item4': 'Barra de bebidas iluminada, con bartenders.',
-    'services.card2.item5': 'Pista de baile en cristal iluminada y led pixel.',
+    'services.card2.item5': 'Periqueras y salas lounge.',
     'services.card2.item6': 'Karaoke.',
     'services.card2.item7': 'Pantallas pitch 3.9.',
 

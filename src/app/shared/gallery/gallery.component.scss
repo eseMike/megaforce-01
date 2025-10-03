@@ -274,3 +274,28 @@ $accent-end: #a855f7;   // purple
   object-fit: contain !important;
   background: rgba(0,0,0,0.06);
 }
+
+/* === 'Ver más fotos' CTA polish and spacing === */
+.gallery__grid + .gallery__cta {
+  margin-top: clamp(16px, 4vw, 32px);
+}
+
+.gallery__cta + .gallery__grid {
+  margin-top: clamp(16px, 4vw, 32px);
+}
+
+.gallery__cta .btn.btn--primary {
+  padding: 12px 24px;
+  font-weight: 700;
+  border-radius: 999px;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+/* === Extra photos grid should look identical to main grid === */
+.gallery__grid--extra .gallery-card__image {
+  display: block;
+  width: 100%;
+  height: clamp(220px, 25vw, 320px); /* same as primary cards */
+  object-fit: cover;                 /* uniform crop like the first 6 */
+}

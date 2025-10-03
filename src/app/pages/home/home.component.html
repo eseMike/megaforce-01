@@ -5,6 +5,11 @@
 ></app-hero>
 
 <app-discover></app-discover>
-<app-gallery></app-gallery>
+<app-gallery
+  [items]="galleryItems"
+  [extraItems]="galleryItemsExtra"
+  [packages]="packagesItems"
+  variant="page"
+></app-gallery>
 <app-testimonials></app-testimonials>
 <app-contact></app-contact>

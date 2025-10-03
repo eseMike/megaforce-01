@@ -76,6 +76,8 @@ export class GalleryComponent {
    */
   @Input() items: GalleryItem[] = [];
   @Input() packages: PackageInput[] = [];
+  /** Optional extra photos to reveal with the "Ver más fotos" button */
+  @Input() extraItems: GalleryItem[] = [];
 
   /**
    * Changes the layout of the component:
@@ -146,5 +148,13 @@ export class GalleryComponent {
 
   get resolvedSubtitle(): string | undefined {
     return this.subtitle ?? this.i18n.t('gallery.subtitle');
+  }
+
+  /** Controls visibility of the extra photos grid in Photos tab */
+  showMore = false;
+
+  /** Toggle the extra photos visibility */
+  toggleMore(): void {
+    this.showMore = !this.showMore;
   }
 }
