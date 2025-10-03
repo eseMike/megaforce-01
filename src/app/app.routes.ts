@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { GaleriaComponent } from './pages/galeria/galeria.component';
 import { QuienessomosComponent } from './pages/quienessomos/quienessomos.component';
@@ -11,3 +11,7 @@ export const routes: Routes = [
   { path: 'servicios', component: ServiciosComponent },
   { path: '**', redirectTo: '' }
 ];
+
+export const appRouting = RouterModule.forRoot(routes, {
+  scrollPositionRestoration: 'top'
+});
