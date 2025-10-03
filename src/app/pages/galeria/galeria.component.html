@@ -6,5 +6,9 @@
 
 <section class="gallery-page" aria-label="Listado de imágenes de la galería">
   <!-- Reutilizamos el componente genérico de galería -->
-  <app-gallery [items]="galleryItems" variant="page"></app-gallery>
+  <app-gallery
+    [items]="galleryItems"
+    [packages]="packagesItems"
+    variant="page">
+  </app-gallery>
 </section>

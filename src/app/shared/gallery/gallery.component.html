@@ -18,18 +18,40 @@
     </header>
 
     <div class="gallery__grid" role="list">
-      <article class="gallery-card" role="listitem"
-               *ngFor="let item of currentItems">
-        <img class="gallery-card__image"
-             [src]="item.src"
-             [alt]="item.alt || item.title"
-             loading="lazy" />
-        <span class="gallery-card__frame"></span>
+      <!-- Normal tabs (photos, videos) -->
+      <ng-container *ngIf="activeTab !== 'packages'">
+        <article class="gallery-card" role="listitem"
+                 *ngFor="let item of currentItems">
+          <img class="gallery-card__image"
+               [src]="item.src"
+               [alt]="item.alt || item.title"
+               loading="lazy" />
+          <span class="gallery-card__frame"></span>
+          <div class="gallery-card__body">
+            <h3 class="gallery-card__title" *ngIf="item.title">{{ item.title }}</h3>
+          </div>
+        </article>
+      </ng-container>
 
-        <div class="gallery-card__body">
-          <h3 class="gallery-card__title" *ngIf="item.title">{{ item.title }}</h3>
-        </div>
-      </article>
+      <!-- Packages tab: cada paquete = 2 tarjetas independientes (ficha izquierda, setup derecha) -->
+      <ng-container *ngIf="activeTab === 'packages'">
+        <ng-container *ngFor="let pack of packages; let i = index">
+          <article class="gallery-card gallery-card--contain" role="listitem">
+            <img class="gallery-card__image"
+                 [src]="pack.ficha"
+                 [alt]="pack.alt || ('Paquete ' + (i + 1) + ' ficha')"
+                 loading="lazy" />
+            <span class="gallery-card__frame"></span>
+          </article>
+          <article class="gallery-card gallery-card--contain" role="listitem">
+            <img class="gallery-card__image"
+                 [src]="pack.setup"
+                 [alt]="pack.alt || ('Paquete ' + (i + 1) + ' setup')"
+                 loading="lazy" />
+            <span class="gallery-card__frame"></span>
+          </article>
+        </ng-container>
+      </ng-container>
     </div>
 
     <div class="gallery__cta">

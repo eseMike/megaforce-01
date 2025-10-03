@@ -11,6 +11,13 @@ export interface GalleryItem {
   actionHref?: string;
 }
 
+export interface PackageInput {
+  ficha: string;
+  setup: string;
+  alt?: string;
+  titleBase?: string;
+}
+
 export type GalleryVariant = 'home' | 'page';
 export type GalleryTab = 'photos' | 'videos' | 'packages';
 
@@ -68,6 +75,7 @@ export class GalleryComponent {
    * Items to render in the gallery. If empty, a small default set will be used (home variant).
    */
   @Input() items: GalleryItem[] = [];
+  @Input() packages: PackageInput[] = [];
 
   /**
    * Changes the layout of the component:
@@ -98,13 +106,26 @@ export class GalleryComponent {
   readonly defaultVideoItems: GalleryItem[] = [];
   readonly defaultPackageItems: GalleryItem[] = [];
 
+  /** Convert packages (ficha + setup) into plain GalleryItem[] for rendering */
+  private get packagesAsItems(): GalleryItem[] {
+    const list = this.packages ?? [];
+    return list.flatMap((p, idx) => {
+      const num = String(idx + 1).padStart(2, '0');
+      const base = p.titleBase ?? `Paquete ${num}`;
+      return [
+        { src: p.ficha, alt: p.alt ?? `${base} ficha`, title: `${base} — ficha` },
+        { src: p.setup, alt: p.alt ?? `${base} setup`, title: `${base} — setup` },
+      ];
+    });
+  }
+
   /** Items resolved by current tab */
   get currentItems(): GalleryItem[] {
     switch (this.activeTab) {
       case 'videos':
         return this.defaultVideoItems;
       case 'packages':
-        return this.defaultPackageItems;
+        return (this.packages && this.packages.length > 0) ? this.packagesAsItems : this.defaultPackageItems;
       case 'photos':
       default:
         return this.resolvedItems;

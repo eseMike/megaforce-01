@@ -252,3 +252,25 @@ $accent-end: #a855f7;   // purple
 @media (max-width: 640px) {
   .gallery__head { margin-bottom: clamp(16px, 6vw, 32px); }
 }
+
+/* === Layout & fit for Paquetes (pairs per row, no cropping) === */
+.gallery__grid:has(.gallery-card--contain) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 640px) {
+  .gallery__grid:has(.gallery-card--contain) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Do not crop package images; show full content */
+.gallery-card--contain .gallery-card__image {
+  display: block;
+  max-height: 420px;
+  width: auto;
+  margin: 0 auto;
+  height: auto !important;
+  object-fit: contain !important;
+  background: rgba(0,0,0,0.06);
+}
