@@ -43,12 +43,12 @@ export class HomeComponent {
    * Must match assets already present in src/assets/images/
    */
   readonly galleryItems = [
-    { src: 'assets/images/evento1.jpg', alt: 'Evento 1' },
-    { src: 'assets/images/evento2.jpg', alt: 'Evento 2' },
-    { src: 'assets/images/evento3.jpg', alt: 'Evento 3' },
     { src: 'assets/images/evento4.jpg', alt: 'Evento 4' },
     { src: 'assets/images/evento5.jpg', alt: 'Evento 5' },
     { src: 'assets/images/evento6.jpg', alt: 'Evento 6' },
+    { src: 'assets/images/evento1.jpg', alt: 'Evento 1' },
+    { src: 'assets/images/evento2.jpg', alt: 'Evento 2' },
+    { src: 'assets/images/evento3.jpg', alt: 'Evento 3' },
   ];
 
   /**

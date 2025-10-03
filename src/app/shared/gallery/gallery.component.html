@@ -55,18 +55,8 @@
       </ng-container>
     </div>
 
-    <!-- CTA: Ver más / Ver menos (solo en pestaña Fotos) -->
-    <div class="gallery__cta" *ngIf="activeTab === 'photos'">
-      <button *ngIf="!showMore" class="btn btn--primary" type="button" (click)="toggleMore()">
-        Ver más fotos
-      </button>
-      <button *ngIf="showMore" class="btn" type="button" (click)="toggleMore()">
-        Ver menos
-      </button>
-    </div>
-
     <!-- Segunda grilla (idéntica a la principal) -->
-    <div class="gallery__grid gallery__grid--extra" role="list" *ngIf="activeTab === 'photos' && showMore">
+    <div class="gallery__grid gallery__grid--extra" role="list" *ngIf="activeTab === 'photos' && showExtraGrid">
       <article class="gallery-card" role="listitem" *ngFor="let extra of extraItems">
         <img class="gallery-card__image"
              [src]="extra.src"
@@ -77,6 +67,27 @@
           <h3 class="gallery-card__title" *ngIf="extra.title">{{ extra.title }}</h3>
         </div>
       </article>
+    </div>
+
+    <!-- CTA: Ver más / Ver menos (solo en pestaña Fotos) -->
+    <div class="gallery__cta" *ngIf="activeTab === 'photos'">
+      <!-- External link has priority: if provided, always show it -->
+      <a *ngIf="moreLinkHref"
+         class="btn btn--primary"
+         [href]="moreLinkHref"
+         target="_blank" rel="noopener">
+        {{ moreLinkLabel }}
+      </a>
+
+      <!-- Fallback to toggle when no external link is defined -->
+      <ng-container *ngIf="!moreLinkHref && !alwaysShowExtra && (extraItems?.length)">
+        <button *ngIf="!showMore" class="btn btn--primary" type="button" (click)="toggleMore()">
+          Ver más fotos
+        </button>
+        <button *ngIf="showMore" class="btn" type="button" (click)="toggleMore()">
+          Ver menos
+        </button>
+      </ng-container>
     </div>
   </div>
 </section>

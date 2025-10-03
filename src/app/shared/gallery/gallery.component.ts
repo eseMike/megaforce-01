@@ -60,8 +60,15 @@ export class GalleryComponent {
     packages: undefined,
   };
 
-  /** Label for the more-link depending on active tab */
+  /** Optional override label for the external CTA link (bound from parent). */
+  private _moreLinkLabelOverride?: string;
+
+  @Input()
+  set moreLinkLabel(value: string | undefined) {
+    this._moreLinkLabelOverride = value;
+  }
   get moreLinkLabel(): string {
+    if (this._moreLinkLabelOverride) return this._moreLinkLabelOverride;
     if (this.activeTab === 'photos') return this.i18n.t('gallery.morePhotos');
     if (this.activeTab === 'videos') return this.i18n.t('gallery.moreVideos');
     return this.i18n.t('gallery.more');
@@ -69,7 +76,7 @@ export class GalleryComponent {
 
   /** Href for the more-link depending on active tab */
   get moreLinkHref(): string | undefined {
-    return this.externalMoreLinks[this.activeTab];
+    return this.moreLinkUrl ?? this.externalMoreLinks[this.activeTab];
   }
   /**
    * Items to render in the gallery. If empty, a small default set will be used (home variant).
@@ -78,6 +85,15 @@ export class GalleryComponent {
   @Input() packages: PackageInput[] = [];
   /** Optional extra photos to reveal with the "Ver más fotos" button */
   @Input() extraItems: GalleryItem[] = [];
+
+  /** If true, extra photos grid is always visible (no toggle). */
+  @Input() alwaysShowExtra = false;
+
+  /** Optional override for the external CTA link (e.g., Instagram). */
+  @Input() moreLinkUrl?: string;
+
+  /** Default tab when the component mounts */
+  @Input() defaultTab: GalleryTab = 'photos';
 
   /**
    * Changes the layout of the component:
@@ -156,5 +172,14 @@ export class GalleryComponent {
   /** Toggle the extra photos visibility */
   toggleMore(): void {
     this.showMore = !this.showMore;
+  }
+
+  /** Extra grid visibility considering the override */
+  get showExtraGrid(): boolean {
+    return this.alwaysShowExtra || this.showMore;
+  }
+
+  ngOnInit(): void {
+    this.activeTab = this.defaultTab ?? 'photos';
   }
 }
