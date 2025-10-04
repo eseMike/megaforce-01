@@ -113,3 +113,51 @@
     height: 60px;
   }
 }
+
+/* === Square social icons (SVG-friendly) === */
+.footer__social .icon-square {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,.08);
+  outline: 1px solid rgba(255,255,255,.12);
+  transition: transform .15s ease, box-shadow .2s ease, background .2s ease, outline-color .2s ease;
+
+  /* Ensure svg-based icons render crisp and consistent with img (20–22px) */
+  svg { display: block; width: 22px; height: 22px; color: #fff; }
+}
+
+/* Hover personalizado por red social */
+.footer__social .icon-square--facebook:hover {
+  background: #1877F2;
+  box-shadow: 0 8px 24px rgba(24,119,242,.4);
+}
+
+.footer__social .icon-square--instagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  box-shadow: 0 8px 24px rgba(214,36,159,.4);
+}
+
+.footer__social .icon-square--youtube:hover {
+  background: #FF0000;
+  box-shadow: 0 8px 24px rgba(255,0,0,.4);
+}
+
+.footer__social .icon-square--tiktok:hover {
+  background: linear-gradient(135deg, #25F4EE33, #FE2C5533);
+  box-shadow: 0 8px 24px rgba(0,0,0,.35), 0 0 0 2px rgba(37,244,238,.25) inset;
+}
+
+
+/* General hover accent for all social icons */
+.footer__social .icon-square:hover {
+  transform: translateY(-2px);
+  outline-color: rgba(255,255,255,.25);
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+}
+
+/* Keep legacy image icons working; soften hover match */
+.footer__social a:hover img { opacity: .85; }
