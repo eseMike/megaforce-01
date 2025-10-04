@@ -17,9 +17,18 @@
       </nav>
     </header>
 
+    <!-- Videos tab: CTA to TikTok profile -->
+    <ng-container *ngIf="activeTab === 'videos'">
+      <div class="gallery__cta">
+        <a href="https://www.tiktok.com/@megaforce.01" target="_blank" rel="noopener" class="btn btn--tiktok">
+          🎵 Ver nuestros videos en TikTok
+        </a>
+      </div>
+    </ng-container>
+
     <div class="gallery__grid" role="list">
-      <!-- Normal tabs (photos, videos) -->
-      <ng-container *ngIf="activeTab !== 'packages'">
+      <!-- Photos tab (grid) -->
+      <ng-container *ngIf="activeTab === 'photos'">
         <article class="gallery-card" role="listitem"
                  *ngFor="let item of currentItems">
           <img class="gallery-card__image"

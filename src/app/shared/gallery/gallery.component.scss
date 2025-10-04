@@ -299,3 +299,20 @@ $accent-end: #a855f7;   // purple
   height: clamp(220px, 25vw, 320px); /* same as primary cards */
   object-fit: cover;                 /* uniform crop like the first 6 */
 }
+
+/* === CTA TikTok variant (optional) === */
+.btn--tiktok {
+  border-color: transparent;
+  background: linear-gradient(90deg, #25F4EE, #FE2C55);
+  color: #fff;
+}
+
+.btn--tiktok:hover {
+  box-shadow: 0 0 10px rgba(254, 44, 85, 0.45), 0 0 10px rgba(37, 244, 238, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Ensure CTA is nicely centered and sized on small screens */
+@media (max-width: 640px) {
+  .gallery__cta .btn { font-size: 16px; padding: 12px 22px; }
+}
