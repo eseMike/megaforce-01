@@ -9,14 +9,16 @@
     </div>
 
     <div class="intro__media" aria-hidden="true">
-      <!-- Visual decorativo: marco + anillo -->
-      <div class="intro__visual" aria-hidden="true">
-        <span class="intro__frame"></span>
-        <img class="intro__ring"
-             src="assets/images/musicCircle.svg"
-             alt="Anillo decorativo de portadas de música"
-             loading="lazy"
-             decoding="async" />
+      <div class="marquee" aria-label="Muestras de nuestros servicios">
+        <div class="marquee__track" role="list">
+          <figure class="marquee__item" role="listitem" *ngFor="let src of carouselImages">
+            <img [src]="src" loading="lazy" alt="Muestra de nuestros eventos" />
+          </figure>
+          <!-- Duplicado para loop perfecto -->
+          <figure class="marquee__item" role="listitem" *ngFor="let src of carouselImages">
+            <img [src]="src" loading="lazy" alt="Muestra de nuestros eventos" />
+          </figure>
+        </div>
       </div>
     </div>
   </div>
