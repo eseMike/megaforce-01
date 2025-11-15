@@ -72,10 +72,42 @@
   /* ===== FORM ===== */
   &__form {
     display: grid;
-    gap: 10px;
+    gap: 14px;
     max-width: 460px;
+    padding-bottom: 120px;
     margin-top: clamp(8px, 1.5vw, 20px);
     margin-inline: auto;
+
+    .contact__field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .validation-message {
+      font-size: 13px;
+      color: #d2c8ff;
+      opacity: 0.9;
+      margin-top: -2px;
+      margin-bottom: 6px;
+      padding-left: 4px;
+      min-height: 16px;
+      transition: opacity .25s ease-in-out;
+      /* Prevent messages from disturbing layout */
+      display: block;
+      line-height: 1.2;
+    }
+    .validation-message:not(:empty) {
+      opacity: 1;
+    }
+
+    .event-map {
+      width: 100%;
+      height: 250px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
 
     label {
       /* Para accesibilidad cuando los labels estén visibles */
@@ -117,6 +149,20 @@
     input:focus { background: rgba(255, 255, 255, 0.08); }
     textarea:focus { background: #ffffff; }
 
+    /* Estado inválido UX */
+    input.ng-invalid.ng-touched,
+    textarea.ng-invalid.ng-touched {
+      border-color: #ff5e5e !important;
+      background: rgba(255, 64, 64, 0.08) !important;
+      box-shadow: 0 0 0 3px rgba(255, 64, 64, 0.18);
+    }
+    input.ng-invalid.ng-touched,
+    textarea.ng-invalid.ng-touched {
+      animation: shake 0.25s ease-in-out 0s 1;
+      border-color: rgba(255, 90, 90, 0.9) !important;
+      box-shadow: 0 0 12px rgba(255, 80, 80, 0.45) !important;
+    }
+
     textarea {
       min-height: 110px;
       height: 110px;
@@ -153,30 +199,164 @@
     }
 
     .contact__submit {
-      margin-top: 4px;
+      margin-top: 16px;
+      margin-bottom: 72px;
       border: 0;
       border-radius: 999px;
-      padding: 12px 20px;
+      padding: 16px 28px;
       font-weight: 700;
-      font-size: 14px;
-      color: #0d0f18;
+      font-size: 16px;
       cursor: pointer;
-      justify-self: start;
-      background: linear-gradient(90deg, var(--mx-accent-2) 0%, var(--mx-accent-1) 100%);
-      box-shadow: var(--shadow-md);
-      transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+      width: 100%;
+      text-align: center;
 
+      /* Colores gradiente marca */
+      color: #ffffff;
+      background: linear-gradient(90deg, var(--mx-accent-2) 0%, var(--mx-accent-1) 100%);
+
+      /* Glow permanente suave */
+      box-shadow:
+        0 0 14px rgba(122, 92, 255, 0.45),
+        0 0 34px rgba(35, 214, 255, 0.35);
+
+      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+
+      /* Hover lifting elegante */
       &:hover {
-        transform: translateY(-1px);
-        filter: brightness(1.05);
-        box-shadow: 0 14px 36px rgba(122, 92, 255, 0.35);
+        transform: translateY(-2px) scale(1.02);
+        filter: brightness(1.12);
+        box-shadow:
+          0 0 22px rgba(122, 92, 255, 0.55),
+          0 0 46px rgba(35, 214, 255, 0.45);
       }
+
       &:active {
-        transform: translateY(0);
-        box-shadow: var(--shadow-md);
+        transform: translateY(0) scale(0.99);
+        box-shadow:
+          0 0 14px rgba(122, 92, 255, 0.45),
+          0 0 34px rgba(35, 214, 255, 0.35);
+      }
+
+      /* Disabled state (fecha ocupada / validación) */
+      &:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+        transform: none !important;
+        filter: grayscale(0.4) brightness(0.85);
+        box-shadow: none;
+      }
+
+      &:disabled:hover {
+        transform: none;
+        filter: grayscale(0.4) brightness(0.85);
+        box-shadow: none;
       }
     }
-  }
+
+    /* === Date Picker Styling === */
+    .date-picker-wrapper {
+      .date-input-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        input#eventDatePicker {
+          cursor: pointer;
+          background: rgba(255, 255, 255, 0.08);
+          padding-right: 42px;
+
+          &:focus {
+            background: rgba(255, 255, 255, 0.14);
+          }
+        }
+
+        .calendar-icon {
+          position: absolute;
+          right: 14px;
+          font-size: 20px;
+          pointer-events: none;
+          opacity: 0.75;
+          transition: opacity .2s ease;
+        }
+
+        &:hover .calendar-icon {
+          opacity: 1;
+        }
+      }
+    }
+
+    /* Status message for date selection */
+    .date-status-message {
+      font-size: 14px;
+      margin-top: -6px;
+      margin-bottom: 4px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 600;
+      transition: opacity .25s ease-in-out, transform .25s ease;
+      opacity: 0.95;
+    }
+
+    /* Success visual (fecha disponible) */
+    .date-status-message.success {
+      background-color: rgba(51, 255, 138, 0.18);
+      color: #3af58d;
+      border: 1px solid rgba(51, 255, 138, 0.35);
+      text-shadow: 0 0 6px rgba(0, 255, 133, 0.35);
+    }
+
+    /* Error visual (fecha NO disponible) */
+    .date-status-message.error {
+      background-color: rgba(255, 64, 64, 0.18);
+      color: #ff7575;
+      border: 1px solid rgba(255, 64, 64, 0.35);
+      text-shadow: 0 0 6px rgba(255, 64, 64, 0.35);
+    }
+
+    /* === Form Status Global Message === */
+    #formStatusMessage.form-status-message {
+      font-size: 15px;
+      font-weight: 600;
+      text-align: center;
+      margin-top: 8px;
+      margin-bottom: -8px;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity .25s ease, transform .25s ease;
+    }
+
+    #formStatusMessage.form-status-message.error {
+      background-color: rgba(122, 92, 255, 0.18);
+      color: #d2c8ff;
+      border: 1px solid rgba(122, 92, 255, 0.45);
+      border-radius: 8px;
+      padding: 12px 14px;
+      text-shadow: 0 0 4px rgba(122, 92, 255, 0.35);
+      backdrop-filter: blur(6px);
+    }
+
+    #formStatusMessage.form-status-message.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #formStatusMessage.form-status-message.success {
+      background-color: rgba(38, 255, 143, 0.18);
+      color: #3af58d;
+      border: 1px solid rgba(38, 255, 143, 0.45);
+      border-radius: 8px;
+      padding: 12px 14px;
+      text-shadow: 0 0 4px rgba(38, 255, 143, 0.35);
+    }
+
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-4px); }
+      50% { transform: translateX(4px); }
+      75% { transform: translateX(-3px); }
+      100% { transform: translateX(0); }
+    }
 
   /* ===== RIGHT (art) ===== */
   &__art, &__right {
@@ -278,4 +458,5 @@
       max-width: 520px;
     }
   }
+}
 }

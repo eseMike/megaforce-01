@@ -8,6 +8,9 @@
 @import url('./styles/nav.css');
 @import url('./styles/quienessomos-sty.css');
 @import url('./styles/servicios-sty.css');
+@import "leaflet/dist/leaflet.css";
+@import "pikaday/css/pikaday.css";
+
 
 /* You can add global styles to this file, and also import other style files */
 
@@ -48,4 +51,49 @@ section {
 .whatsapp-float:hover {
   transform: scale(1.1);
   background-color: #20ba5a;
+}
+
+/* ===== ESTILOS PARA CALENDARIO DE FECHAS ===== */
+.event-calendar {
+  background: #111;
+  padding: 12px;
+  border-radius: 10px;
+  width: fit-content;
+  margin: 10px auto;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.25);
+}
+
+.pika-single {
+  background: #000;
+  border: 1px solid #444;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.pika-lendar {
+  background: #000;
+}
+
+.pika-title {
+  color: #fff;
+}
+
+.pika-button {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.pika-button:hover {
+  background: #d0a52b;
+  color: #000;
+  transition: 0.2s ease-in-out;
+}
+
+.is-disabled .pika-button {
+  background: #4b0000;
+  color: #888;
+  cursor: not-allowed;
+  opacity: 0.4;
 }

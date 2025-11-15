@@ -6,29 +6,54 @@
         <p class="contact__subtitle"><em>{{ i18n.t('contact.subtitle') }}</em></p>
       </header>
 
-      <form class="contact__form" autocomplete="on" novalidate>
+      <form class="contact__form" autocomplete="on" novalidate (submit)="sendWhatsApp($event)">
         <div class="contact__field">
-          <label for="name" class="sr-only">Nombre</label>
-          <input id="name" name="name" type="text" placeholder="{{ i18n.t('contact.name') }}" required />
+          <label for="contactName" class="sr-only">Tu nombre</label>
+          <input id="contactName" name="contactName" type="text" placeholder="Tu nombre" required />
         </div>
-
-        <div class="contact__field">
-          <label for="email" class="sr-only">Correo electrónico</label>
-          <input id="email" name="email" type="email" placeholder="{{ i18n.t('contact.email') }}" inputmode="email" required />
-        </div>
-
-        <div class="contact__field contact__field--inline">
-          <label for="phone-prefix" class="sr-only">Código de país</label>
-          <input id="phone-prefix" name="phonePrefix" type="text" inputmode="tel" autocomplete="tel-country-code" class="contact__prefix" value="+52" aria-label="Código de país" />
-          <label for="phone" class="sr-only">Número de teléfono</label>
-          <input id="phone" name="phone" type="tel" placeholder="{{ i18n.t('contact.phone') }}" inputmode="tel" autocomplete="tel" required />
-        </div>
+        <div id="error-contactName" class="validation-message" aria-live="polite"></div>
 
         <div class="contact__field">
-          <label for="message" class="sr-only">Escribe tu mensaje</label>
-          <textarea id="message" name="message" placeholder="{{ i18n.t('contact.message') }}" rows="5"></textarea>
+          <label for="eventType" class="sr-only">¿De qué será tu evento?</label>
+          <input id="eventType" name="eventType" type="text" placeholder="Tipo de evento" required />
+        </div>
+        <div id="error-eventType" class="validation-message" aria-live="polite"></div>
+
+        <div class="contact__field date-picker-wrapper">
+          <label for="eventDatePicker">Selecciona la fecha del evento</label>
+          <div class="date-input-container">
+            <input
+              id="eventDatePicker"
+              name="eventDate"
+              type="text"
+              placeholder="Seleccionar fecha"
+              readonly
+            />
+            <span class="calendar-icon" aria-hidden="true">📅</span>
+          </div>
+        </div>
+        <div id="error-eventDate" class="validation-message" aria-live="polite"></div>
+        <div id="dateStatusMessage" class="date-status-message" aria-live="polite"></div>
+
+        <div class="contact__field">
+          <label for="guestCount" class="sr-only">Personas aproximadas</label>
+          <input id="guestCount" name="guestCount" type="number" min="1" step="1" placeholder="Personas aproximadas" />
         </div>
 
+        <div class="contact__field">
+          <label for="venueSize" class="sr-only">Tamaño aproximado del lugar</label>
+          <input id="venueSize" name="venueSize" type="text" placeholder="Tamaño aproximado del lugar" />
+        </div>
+
+        <div class="contact__field">
+          <label class="sr-only">Ubicación del evento</label>
+
+          <!-- Mapa interactivo -->
+          <div id="eventMap" class="event-map"></div>
+        </div>
+
+
+        <div id="formStatusMessage" class="form-status-message" aria-live="polite"></div>
         <button type="submit" class="contact__submit" [attr.aria-label]="i18n.t('contact.submit')">
           {{ i18n.t('contact.submit') }} <span aria-hidden="true">→</span>
         </button>
