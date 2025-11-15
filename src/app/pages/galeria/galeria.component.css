@@ -1,0 +1,17 @@
+.gallery_title {
+  font-family: "MADE Soulmaze Brush", "Soulmaze", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+  font-size: clamp(48px, 6vw, 80px);
+  font-weight: 900;
+  line-height: 1.1;
+  color: #fff;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  text-transform: none !important;
+}
+
+:host ::ng-deep app-hero .hero-title {
+  font-family: "MADE Soulmaze Brush", "Soulmaze", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+  text-transform: none !important;
+  font-weight: 900;
+  line-height: 1.1;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}/*# sourceMappingURL=galeria.component.css.map */

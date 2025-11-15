@@ -1,0 +1,190 @@
+@charset "UTF-8";
+.footer {
+  background: #000;
+  color: #fff;
+}
+
+.footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Menú centrado con rieles punteados a los lados */
+.footer__menu {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Marca */
+.footer__brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+.footer__brand img {
+  height: 80px; /* ajusta según mock */
+  width: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Menú central con separadores punteados */
+.footer__nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.footer__nav a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 0.82rem; /* ~13px */
+  color: #dcdcdc;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.footer__nav a:hover {
+  color: #fff;
+}
+
+/* Separador punteado entre enlaces */
+.dot-sep {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  display: inline-block;
+}
+
+/* Redes */
+.footer__social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer__social a {
+  display: inline-flex;
+}
+.footer__social img {
+  width: 20px;
+  height: 20px;
+  display: block;
+  filter: brightness(1.1);
+  transition: opacity 0.2s ease;
+}
+.footer__social a:hover img {
+  opacity: 0.85;
+}
+
+/* Franja inferior con línea punteada y copyright */
+.footer__bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px 20px 20px;
+  text-align: center;
+}
+
+.footer__copy {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #dcdcdc;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .footer__inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px 24px;
+  }
+  .footer__nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .footer__brand {
+    order: 1;
+  }
+  .footer__social {
+    order: 2;
+  }
+  .footer__bottom {
+    padding: 12px 20px 20px;
+  }
+  .footer__menu {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+  .rail {
+    display: none;
+  }
+  .footer__brand img {
+    height: 60px;
+  }
+}
+/* === Square social icons (SVG-friendly) === */
+.footer__social .icon-square {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  outline: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease, outline-color 0.2s ease;
+  /* Ensure svg-based icons render crisp and consistent with img (20–22px) */
+}
+.footer__social .icon-square svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+  color: #fff;
+}
+
+/* Hover personalizado por red social */
+.footer__social .icon-square--facebook:hover {
+  background: #1877F2;
+  box-shadow: 0 8px 24px rgba(24, 119, 242, 0.4);
+}
+
+.footer__social .icon-square--instagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  box-shadow: 0 8px 24px rgba(214, 36, 159, 0.4);
+}
+
+.footer__social .icon-square--youtube:hover {
+  background: #FF0000;
+  box-shadow: 0 8px 24px rgba(255, 0, 0, 0.4);
+}
+
+.footer__social .icon-square--tiktok:hover {
+  background: linear-gradient(135deg, rgba(37, 244, 238, 0.2), rgba(254, 44, 85, 0.2));
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 0 2px rgba(37, 244, 238, 0.25) inset;
+}
+
+/* General hover accent for all social icons */
+.footer__social .icon-square:hover {
+  transform: translateY(-2px);
+  outline-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Keep legacy image icons working; soften hover match */
+.footer__social a:hover img {
+  opacity: 0.85;
+}/*# sourceMappingURL=footer.component.css.map */

@@ -1,0 +1,310 @@
+@charset "UTF-8";
+/* ===== Gallery Section ===== */
+.gallery {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(32px, 6vw, 72px) clamp(16px, 5vw, 56px);
+  max-width: 1280px;
+  margin: 0 auto;
+  z-index: 0;
+  /* Filter pills */
+  /* Grid */
+}
+.gallery::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* confine background to the section */
+  pointer-events: none;
+  background: radial-gradient(88% 78% at 76% 22%, rgba(141, 45, 236, 0.42) 0%, rgba(141, 45, 236, 0.18) 38%, rgba(0, 0, 0, 0) 70%), radial-gradient(80% 80% at 18% 84%, rgba(34, 211, 238, 0.18) 0%, rgba(0, 0, 0, 0) 55%), linear-gradient(180deg, #0b011d 0%, #121528 46%, #0b0b12 100%);
+  z-index: -1;
+}
+.gallery__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: clamp(20px, 4vw, 40px);
+}
+@media (max-width: 640px) {
+  .gallery__head {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+}
+.gallery__title {
+  font-family: "MADE Soulmaze Brush", "Soulmaze", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 800;
+  font-size: clamp(32px, 4.2vw, 64px);
+  line-height: 1.1;
+  color: #fff;
+  letter-spacing: 0px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+  margin-bottom: 0.35em;
+}
+.gallery__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.gallery__filters button,
+.gallery__filters .pill {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease;
+}
+.gallery__filters button:hover,
+.gallery__filters .pill:hover {
+  transform: translateY(-1px);
+  border-color: #fff;
+}
+.gallery__filters button.is-active,
+.gallery__filters .pill.is-active {
+  border-color: transparent;
+  background: linear-gradient(90deg, #22d3ee, #a855f7);
+}
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2.8vw, 28px);
+}
+@media (max-width: 1024px) {
+  .gallery__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .gallery__grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .gallery {
+    padding-top: clamp(40px, 8vw, 80px);
+    padding-bottom: clamp(40px, 8vw, 80px);
+  }
+}
+
+/* ===== Card ===== */
+.gallery-card {
+  position: relative;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  outline: 1px solid rgba(255, 255, 255, 0.12);
+  outline-offset: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.gallery-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+.gallery-card__frame {
+  pointer-events: none;
+  position: absolute;
+  inset: 10px;
+  border-radius: 12px;
+  border: none;
+}
+.gallery-card__frame::before, .gallery-card__frame::after {
+  content: "";
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0;
+}
+.gallery-card__frame::before {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+  border-top-left-radius: 12px;
+}
+.gallery-card__frame::after {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none;
+  border-bottom-right-radius: 12px;
+}
+.gallery-card__image {
+  display: block;
+  width: 100%;
+  height: clamp(220px, 25vw, 320px);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.gallery-card__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px 18px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 100%);
+}
+.gallery-card__actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Buttons inside cards */
+.btn {
+  --pad-x: 20px;
+  --pad-y: 8px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  padding: var(--pad-y) var(--pad-x);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.btn:hover {
+  transform: translateY(-1px);
+  border-color: #fff;
+}
+.btn--primary {
+  border-color: transparent;
+  background: linear-gradient(90deg, #22d3ee, #a855f7);
+}
+.btn--primary:hover {
+  box-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
+}
+.btn--play {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn--play::after {
+  content: "▶";
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+/* Call-to-action at bottom */
+.gallery__cta {
+  margin-top: clamp(24px, 6vw, 48px);
+  display: flex;
+  justify-content: center;
+}
+.gallery__cta .btn {
+  font-size: 15px;
+  padding: 12px 18px;
+}
+.gallery__cta .btn::after {
+  content: "→";
+  margin-left: 6px;
+  font-weight: 600;
+}
+
+/* Safety: prevent horizontal overflow on small screens */
+.gallery, .gallery * {
+  max-width: 100%;
+}
+
+/* === Tabs polish & accessibility === */
+.gallery__filters {
+  justify-content: center; /* center pills in header */
+}
+.gallery__filters .pill {
+  padding: 10px 18px; /* a bit larger tap target */
+  font-size: 15px; /* slightly bigger label */
+}
+.gallery__filters .pill:focus-visible {
+  outline: 2px solid #a855f7; /* purple focus ring */
+  outline-offset: 2px;
+}
+.gallery__filters .pill.is-active {
+  color: #fff;
+  box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.35) inset, 0 6px 16px rgba(0, 0, 0, 0.35);
+  transform: none; /* keep steady while active */
+}
+
+/* Slight breathing room below filters on small screens */
+@media (max-width: 640px) {
+  .gallery__head {
+    margin-bottom: clamp(16px, 6vw, 32px);
+  }
+}
+/* === Layout & fit for Paquetes (pairs per row, no cropping) === */
+.gallery__grid:has(.gallery-card--contain) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 640px) {
+  .gallery__grid:has(.gallery-card--contain) {
+    grid-template-columns: 1fr;
+  }
+}
+/* Do not crop package images; show full content */
+.gallery-card--contain .gallery-card__image {
+  display: block;
+  max-height: 420px;
+  width: auto;
+  margin: 0 auto;
+  height: auto !important;
+  -o-object-fit: contain !important;
+     object-fit: contain !important;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+/* === 'Ver más fotos' CTA polish and spacing === */
+.gallery__grid + .gallery__cta {
+  margin-top: clamp(16px, 4vw, 32px);
+}
+
+.gallery__cta + .gallery__grid {
+  margin-top: clamp(16px, 4vw, 32px);
+}
+
+.gallery__cta .btn.btn--primary {
+  padding: 12px 24px;
+  font-weight: 700;
+  border-radius: 999px;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+/* === Extra photos grid should look identical to main grid === */
+.gallery__grid--extra .gallery-card__image {
+  display: block;
+  width: 100%;
+  height: clamp(220px, 25vw, 320px); /* same as primary cards */
+  -o-object-fit: cover;
+     object-fit: cover; /* uniform crop like the first 6 */
+}
+
+/* === CTA TikTok variant (optional) === */
+.btn--tiktok {
+  border-color: transparent;
+  background: linear-gradient(90deg, #25F4EE, #FE2C55);
+  color: #fff;
+}
+
+.btn--tiktok:hover {
+  box-shadow: 0 0 10px rgba(254, 44, 85, 0.45), 0 0 10px rgba(37, 244, 238, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Ensure CTA is nicely centered and sized on small screens */
+@media (max-width: 640px) {
+  .gallery__cta .btn {
+    font-size: 16px;
+    padding: 12px 22px;
+  }
+}/*# sourceMappingURL=gallery.component.css.map */

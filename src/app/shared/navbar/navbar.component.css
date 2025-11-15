@@ -1,0 +1,140 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #0c0c0c;
+  color: #fff;
+}
+
+.nav__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+}
+.nav__brand img {
+  height: 80px;
+  width: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+}
+
+.nav__logo {
+  height: 40px;
+  width: auto;
+  display: block;
+  -o-object-fit: contain;
+     object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.nav__logo:hover {
+  transform: scale(1.05);
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 3.2vw, 36px);
+}
+.nav__links a {
+  color: #ddd;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.2px;
+  transition: color 0.2s ease;
+  position: relative;
+  padding-bottom: 6px;
+}
+.nav__links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  transform: translateX(-50%);
+  transition: width 0.25s ease;
+  opacity: 0.85;
+}
+.nav__links a:hover::after {
+  width: 100%;
+}
+.nav__links a.active::after {
+  width: 100%;
+}
+.nav__links a.active, .nav__links a:hover {
+  color: #fff;
+}
+.nav__links .nav__lang {
+  padding: 6px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1333333333);
+  border-radius: 6px;
+}
+
+/* Toggle (hamburguesa) */
+.nav__toggle {
+  display: none;
+  width: 36px;
+  height: 28px;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.nav__toggle span {
+  display: block;
+  height: 2px;
+  background: #fff;
+  margin: 6px 0;
+  transition: transform 0.2s ease;
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+  .nav__toggle {
+    display: block;
+  }
+  .nav__links {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: #0c0c0c;
+    flex-direction: column;
+    padding: 10px 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.0784313725);
+    display: none;
+  }
+  .nav__links.is-open {
+    display: flex;
+  }
+  .nav__links a {
+    padding: 8px 0;
+    width: 100%;
+    padding-bottom: 4px;
+  }
+  .nav__links a::after {
+    left: 0;
+    transform: none;
+  }
+  .nav__links a:hover::after, .nav__links a.active::after {
+    width: 40%;
+  }
+}/*# sourceMappingURL=navbar.component.css.map */

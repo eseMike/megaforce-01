@@ -1,0 +1,98 @@
+@charset "UTF-8";
+/* Importa las hojas de estilo originales */
+@import url("./styles/fonts.css");
+@import url("./styles/footer.css");
+@import url("./styles/form-info.css");
+@import url("./styles/galeria-sty.css");
+@import url("./styles/general-config.css");
+@import url("./styles/index-sty.css");
+@import url("./styles/nav.css");
+@import url("./styles/quienessomos-sty.css");
+@import url("./styles/servicios-sty.css");
+@import "leaflet/dist/leaflet.css";
+@import "pikaday/css/pikaday.css";
+/* You can add global styles to this file, and also import other style files */
+/* Fondo global oscuro para todo el sitio */
+html, body, app-root, main {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: linear-gradient(180deg, #0d0d0d 0%, #1a1a1a 100%);
+  color: #fff;
+}
+
+/* Asegura que todas las secciones hereden el fondo */
+section {
+  background-color: transparent;
+}
+
+/* Botón flotante de WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background-color: #20ba5a;
+}
+
+/* ===== ESTILOS PARA CALENDARIO DE FECHAS ===== */
+.event-calendar {
+  background: #111;
+  padding: 12px;
+  border-radius: 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 10px auto;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.25);
+}
+
+.pika-single {
+  background: #000;
+  border: 1px solid #444;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.pika-lendar {
+  background: #000;
+}
+
+.pika-title {
+  color: #fff;
+}
+
+.pika-button {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.pika-button:hover {
+  background: #d0a52b;
+  color: #000;
+  transition: 0.2s ease-in-out;
+}
+
+.is-disabled .pika-button {
+  background: #4b0000;
+  color: #888;
+  cursor: not-allowed;
+  opacity: 0.4;
+}/*# sourceMappingURL=styles.css.map */
