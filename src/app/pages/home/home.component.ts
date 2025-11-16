@@ -32,6 +32,11 @@ export class HomeComponent {
   // Expose i18n to the template
   readonly i18n = inject(TranslationService);
 
+  /**
+   * Dynamic background for production — ensures correct path resolution
+   */
+  backgroundUrl = window.location.origin + '/assets/images/fondo-personas.png';
+
   // Services cards to show in the home gallery section
   services: ServiceCard[] = SERVICES_CARDS;
 
