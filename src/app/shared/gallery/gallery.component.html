@@ -32,7 +32,7 @@
         <article class="gallery-card" role="listitem"
                  *ngFor="let item of currentItems">
           <img class="gallery-card__image"
-               [src]="item.src"
+               [src]="'/assets/images/' + item.src"
                [alt]="item.alt || item.title"
                loading="lazy" />
           <span class="gallery-card__frame"></span>
@@ -48,14 +48,14 @@
         <ng-container *ngFor="let pack of packages; let i = index">
           <article class="gallery-card gallery-card--contain" role="listitem">
             <img class="gallery-card__image"
-                 [src]="pack.ficha"
+                 [src]="'/assets/images/' + pack.ficha"
                  [alt]="pack.alt || ('Paquete ' + (i + 1) + ' ficha')"
                  loading="lazy" />
             <span class="gallery-card__frame"></span>
           </article>
           <article class="gallery-card gallery-card--contain" role="listitem">
             <img class="gallery-card__image"
-                 [src]="pack.setup"
+                 [src]="'/assets/images/' + pack.setup"
                  [alt]="pack.alt || ('Paquete ' + (i + 1) + ' setup')"
                  loading="lazy" />
             <span class="gallery-card__frame"></span>
@@ -68,7 +68,7 @@
     <div class="gallery__grid gallery__grid--extra" role="list" *ngIf="activeTab === 'photos' && showExtraGrid">
       <article class="gallery-card" role="listitem" *ngFor="let extra of extraItems">
         <img class="gallery-card__image"
-             [src]="extra.src"
+             [src]="'/assets/images/' + extra.src"
              [alt]="extra.alt || extra.title"
              loading="lazy" />
         <span class="gallery-card__frame"></span>
