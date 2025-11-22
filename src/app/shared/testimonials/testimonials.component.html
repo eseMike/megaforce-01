@@ -14,7 +14,8 @@
         <div class="testimonial-card__author">
           <img
             class="testimonial-card__avatar"
-            src="assets/testimonios/testimonial1.jpg"
+            [src]="t.image"
+            (error)="onImgError($event)"
             alt="Foto de {{ i18n.t(t.authorKey) }}"
             loading="lazy"
             decoding="async"
