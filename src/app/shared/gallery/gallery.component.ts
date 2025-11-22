@@ -112,12 +112,12 @@ export class GalleryComponent {
    * Fallback items for home when no items are passed in.
    */
   readonly defaultHomeItems: GalleryItem[] = [
-    { src: '/assets/images/evento1.jpg', alt: 'Evento 1' },
-    { src: '/assets/images/evento2.jpg', alt: 'Evento 2' },
-    { src: '/assets/images/evento3.jpg', alt: 'Evento 3' },
-    { src: '/assets/images/evento4.jpg', alt: 'Evento 4' },
-    { src: '/assets/images/evento5.jpg', alt: 'Evento 5' },
-    { src: '/assets/images/evento6.jpg', alt: 'Evento 6' },
+    { src: '/assets/images/evento1.jpeg', alt: 'Evento 1' },
+    { src: '/assets/images/evento2.jpeg', alt: 'Evento 2' },
+    { src: '/assets/images/evento3.jpeg', alt: 'Evento 3' },
+    { src: '/assets/images/evento4.jpeg', alt: 'Evento 4' },
+    { src: '/assets/images/evento5.jpeg', alt: 'Evento 5' },
+    { src: '/assets/images/evento6.jpeg', alt: 'Evento 6' },
   ];
 
   /** Placeholder collections for videos & packages – content to be provided later */

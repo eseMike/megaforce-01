@@ -22,29 +22,29 @@ export class TestimonialsComponent {
     {
       textKey: 'testimonials.1.text',
       authorKey: 'testimonials.1.author',
-      image: '/assets/testimonios/testimonial1.jpg'
+      image: '/assets/testimonios/testimonial1.jpeg'
     },
     {
       textKey: 'testimonials.2.text',
       authorKey: 'testimonials.2.author',
-      image: '/assets/testimonios/testimonial2.jpg'
+      image: '/assets/testimonios/testimonial2.jpeg'
     },
     {
       textKey: 'testimonials.3.text',
       authorKey: 'testimonials.3.author',
-      image: '/assets/testimonios/testimonial3.jpg'
+      image: '/assets/testimonios/testimonial3.jpeg'
     },
     {
       textKey: 'testimonials.4.text',
       authorKey: 'testimonials.4.author',
-      image: '/assets/testimonios/testimonial4.jpg'
+      image: '/assets/testimonios/testimonial4.jpeg'
     },
   ];
 
   onImgError(event: Event) {
     const target = event.target as HTMLImageElement | null;
     if (target) {
-      target.src = '/assets/testimonios/testimonial1.jpg';
+      target.src = '/assets/testimonios/testimonial1.jpeg';
     }
   }
 

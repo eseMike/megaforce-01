@@ -13,17 +13,17 @@ export class DiscoverComponent {
 
   /** Images for the continuous marquee in Discover */
   carouselImages: string[] = [
-    'assets/images/evento1.jpg',
-    'assets/images/evento2.jpg',
-    'assets/images/evento3.jpg',
-    'assets/images/evento4.jpg',
-    'assets/images/evento5.jpg',
-    'assets/images/evento6.jpg',
-    'assets/images/evento7.jpg',
-    'assets/images/evento8.jpg',
-    'assets/images/evento9.jpg',
-    'assets/images/evento10.jpg',
-    'assets/images/evento11.jpg',
-    'assets/images/evento12.jpg',
+    'assets/images/evento1.jpeg',
+    'assets/images/evento2.jpeg',
+    'assets/images/evento3.jpeg',
+    'assets/images/evento4.jpeg',
+    'assets/images/evento5.jpeg',
+    'assets/images/evento6.jpeg',
+    'assets/images/evento7.jpeg',
+    'assets/images/evento8.jpeg',
+    'assets/images/evento9.jpeg',
+    'assets/images/evento10.jpeg',
+    'assets/images/evento11.jpeg',
+    'assets/images/evento12.jpeg',
   ];
 }
