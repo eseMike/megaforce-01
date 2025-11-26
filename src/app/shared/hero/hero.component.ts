@@ -11,5 +11,5 @@ import { CommonModule } from '@angular/common';
 export class HeroComponent {
   @Input() title = '';
   @Input() subtitle = '';
-  @Input() backgroundUrl = ''; // e.g. '/assets/images/fondo-personas.png'
+  @Input() backgroundUrl = 'assets/images/fondo-personas.png';
 }

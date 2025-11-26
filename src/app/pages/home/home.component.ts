@@ -48,55 +48,55 @@ export class HomeComponent {
    * Must match assets already present in src/assets/images/
    */
   readonly galleryItems = [
-    { src: 'assets/images/evento4.jpeg', alt: 'Evento 4' },
-    { src: 'assets/images/evento5.jpeg', alt: 'Evento 5' },
-    { src: 'assets/images/evento6.jpeg', alt: 'Evento 6' },
-    { src: 'assets/images/evento1.jpeg', alt: 'Evento 1' },
-    { src: 'assets/images/evento2.jpeg', alt: 'Evento 2' },
-    { src: 'assets/images/evento3.jpeg', alt: 'Evento 3' },
+    { src: 'assets/images/evento4.jpg', alt: 'Evento 4' },
+    { src: 'assets/images/evento5.jpg', alt: 'Evento 5' },
+    { src: 'assets/images/evento6.jpg', alt: 'Evento 6' },
+    { src: 'assets/images/evento1.jpg', alt: 'Evento 1' },
+    { src: 'assets/images/evento2.jpg', alt: 'Evento 2' },
+    { src: 'assets/images/evento3.jpg', alt: 'Evento 3' },
   ];
 
   /**
    * Extra 6 photos revealed with the "Ver más fotos" button.
    */
   readonly galleryItemsExtra = [
-    { src: 'assets/images/evento7.jpeg', alt: 'Evento 7' },
-    { src: 'assets/images/evento8.jpeg', alt: 'Evento 8' },
-    { src: 'assets/images/evento9.jpeg', alt: 'Evento 9' },
-    { src: 'assets/images/evento10.jpeg', alt: 'Evento 10' },
-    { src: 'assets/images/evento11.jpeg', alt: 'Evento 11' },
-    { src: 'assets/images/evento12.jpeg', alt: 'Evento 12' },
+    { src: 'assets/images/evento7.jpg', alt: 'Evento 7' },
+    { src: 'assets/images/evento8.jpg', alt: 'Evento 8' },
+    { src: 'assets/images/evento9.jpg', alt: 'Evento 9' },
+    { src: 'assets/images/evento10.jpg', alt: 'Evento 10' },
+    { src: 'assets/images/evento11.jpg', alt: 'Evento 11' },
+    { src: 'assets/images/evento12.jpg', alt: 'Evento 12' },
   ];
 
   readonly packagesItems: PackageItem[] = [
     {
       id: 1,
-      ficha: 'assets/images/paquetes/paquete-01-ficha.jpeg',
-      setup: 'assets/images/paquetes/paquete-01-setup.jpeg',
+      ficha: 'assets/images/paquetes/paquete-01-ficha.jpg',
+      setup: 'assets/images/paquetes/paquete-01-setup.jpg',
       alt: 'Pack MF Básico - ficha y setup'
     },
     {
       id: 2,
-      ficha: 'assets/images/paquetes/paquete-02-ficha.jpeg.jpeg',
-      setup: 'assets/images/paquetes/paquete-02-setup.jpeg',
+      ficha: 'assets/images/paquetes/paquete-02-ficha.jpg',
+      setup: 'assets/images/paquetes/paquete-02-setup.jpg',
       alt: 'Pack MF 02 - ficha y setup'
     },
     {
       id: 3,
-      ficha: 'assets/images/paquetes/paquete-03-ficha.jpeg.jpeg',
-      setup: 'assets/images/paquetes/paquete-03-setup.jpeg',
+      ficha: 'assets/images/paquetes/paquete-03-ficha.jpg',
+      setup: 'assets/images/paquetes/paquete-03-setup.jpg',
       alt: 'Pack MF 03 - ficha y setup'
     },
     {
       id: 4,
-      ficha: 'assets/images/paquetes/paquete-04-ficha.jpeg.jpeg',
-      setup: 'assets/images/paquetes/paquete-04-setup.jpeg',
+      ficha: 'assets/images/paquetes/paquete-04-ficha.jpg',
+      setup: 'assets/images/paquetes/paquete-04-setup.jpg',
       alt: 'Pack MF 04 - ficha y setup'
     },
     {
       id: 5,
-      ficha: 'assets/images/paquetes/paquete-05-ficha.jpeg.jpeg',
-      setup: 'assets/images/paquetes/paquete-05-setup.jpeg',
+      ficha: 'assets/images/paquetes/paquete-05-ficha.jpg',
+      setup: 'assets/images/paquetes/paquete-05-setup.jpg',
       alt: 'Pack MF 05 - ficha y setup'
     },
   ];

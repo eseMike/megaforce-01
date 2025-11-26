@@ -32,9 +32,10 @@
         <article class="gallery-card" role="listitem"
                  *ngFor="let item of currentItems">
           <img class="gallery-card__image"
-               [src]="'/assets/images/' + item.src"
+               [src]="item.src"
                [alt]="item.alt || item.title"
-               loading="lazy" />
+               loading="lazy"
+               (error)="item.src='fallback.jpeg'" />
           <span class="gallery-card__frame"></span>
           <div class="gallery-card__body">
             <h3 class="gallery-card__title" *ngIf="item.title">{{ item.title }}</h3>
@@ -48,16 +49,18 @@
         <ng-container *ngFor="let pack of packages; let i = index">
           <article class="gallery-card gallery-card--contain" role="listitem">
             <img class="gallery-card__image"
-                 [src]="'/assets/images/' + pack.ficha"
+                 [src]="'assets/images/' + pack.ficha"
                  [alt]="pack.alt || ('Paquete ' + (i + 1) + ' ficha')"
-                 loading="lazy" />
+                 loading="lazy"
+                 (error)="pack.ficha='assets/images/fallback.jpeg'" />
             <span class="gallery-card__frame"></span>
           </article>
           <article class="gallery-card gallery-card--contain" role="listitem">
             <img class="gallery-card__image"
-                 [src]="'/assets/images/' + pack.setup"
+                 [src]="'assets/images/' + pack.setup"
                  [alt]="pack.alt || ('Paquete ' + (i + 1) + ' setup')"
-                 loading="lazy" />
+                 loading="lazy"
+                 (error)="pack.setup='assets/images/fallback.jpeg'" />
             <span class="gallery-card__frame"></span>
           </article>
         </ng-container>
@@ -68,9 +71,10 @@
     <div class="gallery__grid gallery__grid--extra" role="list" *ngIf="activeTab === 'photos' && showExtraGrid">
       <article class="gallery-card" role="listitem" *ngFor="let extra of extraItems">
         <img class="gallery-card__image"
-             [src]="'/assets/images/' + extra.src"
+             [src]="extra.src"
              [alt]="extra.alt || extra.title"
-             loading="lazy" />
+             loading="lazy"
+             (error)="extra.src='fallback.jpeg'" />
         <span class="gallery-card__frame"></span>
         <div class="gallery-card__body">
           <h3 class="gallery-card__title" *ngIf="extra.title">{{ extra.title }}</h3>

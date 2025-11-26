@@ -174,6 +174,14 @@ export class GalleryComponent {
     this.showMore = !this.showMore;
   }
 
+  /** Maneja error de carga de imágenes y asigna fallback */
+  onImgError(event: Event): void {
+    const img = event.target as HTMLImageElement;
+    if (!img.src.includes('fallback.jpeg')) {
+      img.src = '/assets/images/fallback.jpeg';
+    }
+  }
+
   /** Extra grid visibility considering the override */
   get showExtraGrid(): boolean {
     return this.alwaysShowExtra || this.showMore;
