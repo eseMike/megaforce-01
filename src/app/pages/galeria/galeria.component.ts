@@ -21,12 +21,12 @@ interface PackageItem {
 export class GaleriaComponent {
   readonly i18n = inject(TranslationService);
   readonly galleryItems = [
-    { src: '/assets/images/evento4.jpg', alt: 'Evento 4' },
-    { src: '/assets/images/evento5.jpg', alt: 'Evento 5' },
-    { src: '/assets/images/evento6.jpg', alt: 'Evento 6' },
-    { src: '/assets/images/evento1.jpg', alt: 'Evento 1' },
-    { src: '/assets/images/evento2.jpg', alt: 'Evento 2' },
-    { src: '/assets/images/evento3.jpg', alt: 'Evento 3' },
+    { src: '/assets/images/evento4.jpeg', alt: 'Evento 4' },
+    { src: '/assets/images/evento5.jpeg', alt: 'Evento 5' },
+    { src: '/assets/images/evento6.jpeg', alt: 'Evento 6' },
+    { src: '/assets/images/evento1.jpeg', alt: 'Evento 1' },
+    { src: '/assets/images/evento2.jpeg', alt: 'Evento 2' },
+    { src: '/assets/images/evento3.jpeg', alt: 'Evento 3' },
   ];
 
   /** Controls the 'Ver más fotos' expansion for photos tab */
@@ -34,12 +34,12 @@ export class GaleriaComponent {
 
   /** Extra 6 photos that appear after clicking 'Ver más fotos' */
   readonly galleryItemsExtra = [
-    { src: '/assets/images/evento7.jpg', alt: 'Evento 7' },
-    { src: '/assets/images/evento8.jpg', alt: 'Evento 8' },
-    { src: '/assets/images/evento9.jpg', alt: 'Evento 9' },
-    { src: '/assets/images/evento10.jpg', alt: 'Evento 10' },
-    { src: '/assets/images/evento11.jpg', alt: 'Evento 11' },
-    { src: '/assets/images/evento12.jpg', alt: 'Evento 12' },
+    { src: '/assets/images/evento7.jpeg', alt: 'Evento 7' },
+    { src: '/assets/images/evento8.jpeg', alt: 'Evento 8' },
+    { src: '/assets/images/evento9.jpeg', alt: 'Evento 9' },
+    { src: '/assets/images/evento10.jpeg', alt: 'Evento 10' },
+    { src: '/assets/images/evento11.jpeg', alt: 'Evento 11' },
+    { src: '/assets/images/evento12.jpeg', alt: 'Evento 12' },
   ];
 
   readonly packagesItems: PackageItem[] = [
