@@ -14,7 +14,7 @@
         <div class="testimonial-card__author">
           <img
             class="testimonial-card__avatar"
-            [src]="t.image"
+            [src]="'assets/testimonios/' + t.image"
             (error)="onImgError($event)"
             alt="Foto de {{ t.title }}"
             loading="lazy"
